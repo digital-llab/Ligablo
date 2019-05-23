@@ -1,7 +1,9 @@
-package com.llab.ligablo;
+package com.llab.ligablo.controllers.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.llab.ligablo.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,7 +1,18 @@
 package com.llab.ligablo.models.produits;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.PrimaryKey;
+
+import com.llab.ligablo.models.etab.Etablissement;
+
+@Entity(foreignKeys = {@ForeignKey(entity = Produits.class, parentColumns = "id", childColumns = "produitId"),
+                       @ForeignKey(entity = Montant.class, parentColumns = "id", childColumns = "montantId"),
+                       @ForeignKey(entity = Contenant.class, parentColumns = "id", childColumns = "contenantId"),
+                       @ForeignKey(entity = Etablissement.class, parentColumns = "id", childColumns = "etsId")})
 public class MontantContenance {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private int contenantId;
     private int produitId;

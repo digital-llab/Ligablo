@@ -1,14 +1,19 @@
 package com.llab.ligablo.models.produits;
 
-public class produitType {
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
+@Entity
+public class ProduitType {
+
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String nom;
 
-    public produitType() {
+    public ProduitType() {
     }
 
-    public produitType(int id, String nom) {
+    public ProduitType(int id, String nom) {
         this.id = id;
         this.nom = nom;
     }

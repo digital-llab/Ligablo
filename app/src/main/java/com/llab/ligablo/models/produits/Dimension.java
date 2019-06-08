@@ -1,7 +1,12 @@
 package com.llab.ligablo.models.produits;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity
 public class Dimension {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private Double poid;
     private Double capacite;

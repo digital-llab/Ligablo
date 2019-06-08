@@ -1,9 +1,18 @@
 package com.llab.ligablo.models.produits;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.PrimaryKey;
+
+import com.llab.ligablo.models.users.User;
+
 import java.util.Date;
 
+@Entity(foreignKeys = {@ForeignKey(entity = Produits.class, parentColumns = "id", childColumns = "produitId"),
+                       @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"),})
 public class Stock {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private int userId;
     private int produitId;

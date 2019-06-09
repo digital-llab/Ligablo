@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Ligablo</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="s_enregistrer">S\'enregistrer</string>
+    <string name="valider">Valider</string>
+    <string name="mot_de_passe_oubli">Mot De Passe Oublié</string>
 </resources>

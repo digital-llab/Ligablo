@@ -48,6 +48,8 @@ public abstract class LigabloDatabase extends RoomDatabase {
     private static volatile LigabloDatabase INSTANCE;
 
     // --- DAO --- //
+
+    //FROM PRODUCT by Alain
     public abstract ProduitsDao produitsDao();
     public abstract StockDao stockDao();
     public abstract MontantDao montantDao();
@@ -57,6 +59,8 @@ public abstract class LigabloDatabase extends RoomDatabase {
     public abstract MontantTypeDao montantTypeDao();
     public abstract ProduitTypeDao produitTypeDao();
     public abstract MontantContenanceDao montantContenanceDao();
+
+    //FROM USERS by Arsene
 
     // --- INSTANCE --- //
     public static LigabloDatabase getInstance(Context context) {

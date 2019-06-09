@@ -1,7 +1,13 @@
 package com.llab.ligablo.models.users;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity(foreignKeys = @ForeignKey(entity = User.class,parentColumns = "id",childColumns = "managerId"))
 public class User {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String nom;
     private String email;

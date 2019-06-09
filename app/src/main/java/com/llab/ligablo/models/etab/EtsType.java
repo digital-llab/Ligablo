@@ -1,7 +1,12 @@
 package com.llab.ligablo.models.etab;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity
 public class EtsType {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String nom;
 

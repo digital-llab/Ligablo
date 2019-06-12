@@ -2,13 +2,25 @@ package com.llab.ligablo.database.dao.users;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
+
 import com.llab.ligablo.models.users.User;
 import java.util.List;
 
 @Dao
 public interface UserDao {
-    LiveData<List<User>> getUsers();
+
+    @Query("SELECT * FROM User WHERE managerId = :userId")
+    LiveData<List<User>> getUsers(int userId);
+
+    @Insert
     int inserUser(User user);
+
+    @Update
     int updateUser(User user);
+
+    @Query("DELETE FROM User WHERE id = :userId")
     int deleteUser(int userId);
 }

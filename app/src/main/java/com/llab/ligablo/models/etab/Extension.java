@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey;
 import com.llab.ligablo.models.users.User;
 
 @Entity(foreignKeys = {@ForeignKey(entity = Etablissement.class, parentColumns = "id", childColumns = "etsId"),
-        @ForeignKey(entity = Adresse.class, parentColumns = "id", childColumns = "adresseId"),})
+                       @ForeignKey(entity = Adresse.class, parentColumns = "id", childColumns = "adresseId"),})
 public class Extension {
 
     @PrimaryKey(autoGenerate = true)

@@ -21,11 +21,10 @@ public class AdminExtension {
     public AdminExtension() {
     }
 
-    public AdminExtension(int extensionId, int userId, Date dateDebut, Date dateFin) {
+    public AdminExtension(int extensionId, int userId, Date dateDebut) {
         this.extensionId = extensionId;
         this.userId = userId;
         this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
     }
 
     public int getExtensionId() {

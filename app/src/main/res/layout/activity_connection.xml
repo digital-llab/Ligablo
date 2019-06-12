@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controllers.activities.ConnectionActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/connectionEmail"
+            android:layout_height="wrap_content"
+            android:hint="Votre Email"
+            android:inputType="textEmailAddress"
+            android:layout_gravity="center_horizontal"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:inputType="textPassword"
+            android:id="@+id/connectionMotDePasse"
+            android:layout_height="wrap_content"
+            android:hint="Votre Mot de Passe"
+            android:layout_gravity="center_horizontal"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/btnMotDePasseOublie"
+            android:padding="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            android:text="@string/mot_de_passe_oubli"
+            android:layout_height="35dp" />
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/btnConnectionValider"
+            android:padding="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="#3b5998"
+
+            android:text="@string/valider"
+            android:layout_height="35dp" />
+    </LinearLayout>
+</RelativeLayout>

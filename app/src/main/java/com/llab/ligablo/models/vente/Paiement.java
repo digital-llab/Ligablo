@@ -1,9 +1,14 @@
 package com.llab.ligablo.models.vente;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.Entity;
 
 import java.util.Date;
 
+@Entity(foreignKeys = {@ForeignKey(entity =PaiementType.class ,parentColumns = "id",childColumns = "typePaiementId"),
+                       @ForeignKey(entity =Devise.class ,parentColumns = "id",childColumns = "deviseId")})
 public class Paiement {
-
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private int typePaiementId;
     private int deviseId;

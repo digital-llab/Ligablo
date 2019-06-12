@@ -1,7 +1,10 @@
 package com.llab.ligablo.models.vente;
+import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.Entity;
 
+@Entity
 public class Moyen {
-
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String valeur;
 

@@ -1,9 +1,13 @@
 package com.llab.ligablo.models.vente;
-
+import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Entity;
+import com.llab.ligablo.models.etab.Extension;
 import java.util.Date;
 
+@Entity(foreignKeys = @ForeignKey(entity =Extension.class ,parentColumns ="id",childColumns ="extensionId" ))
 public class Vente {
-
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private int extensionId;
     private Date date;

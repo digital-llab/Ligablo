@@ -6,12 +6,8 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".controllers.activities.DashBoard">
+    tools:context=".controllers.activities.DrawerDashBoard">
 
-
-    android:background="#fcfcfc"
-
-    android:id="@+id/ll">
 
 <com.gc.materialdesign.views.ScrollView
     android:layout_width="match_parent"
@@ -34,7 +30,7 @@
             android:clickable="true"
             android:background="@android:color/white"
             android:elevation="@dimen/cardview_default_elevation"
-            android:id="@+id/bankcardId"
+            android:id="@+id/configurationCard"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="5dp">
@@ -76,6 +72,7 @@
             android:background="@android:color/white"
             android:elevation="@dimen/cardview_default_elevation"
             android:layout_width="160dp"
+            android:id="@+id/stockCard"
             android:layout_height="190dp"
             android:layout_margin="5dp">
             <LinearLayout
@@ -121,6 +118,7 @@
         <com.gc.materialdesign.views.Card
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:id="@+id/ventesCard"
             android:background="@android:color/white"
             android:elevation="@dimen/cardview_default_elevation"
             android:layout_width="160dp"
@@ -165,6 +163,7 @@
             android:background="@android:color/white"
             android:elevation="@dimen/cardview_default_elevation"
             android:layout_height="190dp"
+            android:id="@+id/inventaireCard"
             android:layout_margin="5dp">
 
             <LinearLayout
@@ -209,6 +208,7 @@
     <LinearLayout
         android:clipToPadding="false"
         android:gravity="center"
+        android:id="@+id/recouvrementCard"
         android:orientation="horizontal"
         android:padding="10dp"
         android:layout_width="match_parent"

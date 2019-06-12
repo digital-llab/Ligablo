@@ -9,9 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controllers.activities.DashBoard"></activity>
-        <activity android:name=".controllers.activities.EnregistrementActivity" />
-        <activity android:name=".controllers.activities.ConnectionActivity" />
+        <activity android:name=".controllers.activities.DrawerDashBoard"></activity>
+        <activity
+            android:name=".controllers.activities.EnregistrementActivity"
+            android:label="Enregistrement"
+            android:parentActivityName=".controllers.activities.MainActivity" />
+        <activity
+            android:name=".controllers.activities.ConnectionActivity"
+            android:label="Connexion"
+            android:parentActivityName=".controllers.activities.MainActivity" />
         <activity android:name=".controllers.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

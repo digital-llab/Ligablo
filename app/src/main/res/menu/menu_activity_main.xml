@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_activity_main_search"
+        android:icon="@drawable/logo1"
+        app:showAsAction="ifRoom"
+        android:title="Rechercher">
+    </item>
+    <item
+        android:id="@+id/menu_Okapya_web"
+        android:title="Okapya Web"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_Apropos"
+        android:title="A propos"
+        app:showAsAction="never">
+
+
+    <menu>
+
+        <item android:id ="@+id/app1"
+            android:title ="A propos des livraisons"/>
+
+        <item android:id ="@+id/app2"
+            android:title ="A propos de l'application "/>
+
+    </menu>
+
+    </item>
+
+</menu>

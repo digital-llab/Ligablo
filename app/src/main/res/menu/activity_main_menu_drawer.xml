@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/activity_main_drawer_accueil"
+            android:icon="@drawable/logo1"
+            android:title="Accueil" />
+    </group>
+
+    <item android:title="Présentation">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/activity_main_drawer_presentation"
+                    android:icon="@drawable/logo1"
+                    android:title="Nouveau Plat" />
+                <item
+                    android:id="@+id/activity_main_drawer_reservation"
+                    android:icon="@drawable/logo1"
+                    android:title="Vos Réservations" />
+                <item
+                    android:id="@+id/activity_main_drawer_favoris"
+                    android:icon="@drawable/logo1"
+                    android:title="Favoris" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Configuration">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/activity_main_drawer_Nos_Restaurants"
+                    android:icon="@drawable/logo1"
+                    android:title="Nos Restaurants" />
+                <item
+                    android:id="@+id/activity_main_drawer_profile"
+                    android:icon="@drawable/logo1"
+                    android:title="Profil" />
+
+                <item
+                    android:id="@+id/activity_main_drawer_conctact"
+                    android:icon="@drawable/logo1"
+                    android:title="Contact" />
+
+                <item
+                    android:id="@+id/activity_main_drawer_parametre"
+                    android:icon="@drawable/logo1"
+                    android:title="Paramètres" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

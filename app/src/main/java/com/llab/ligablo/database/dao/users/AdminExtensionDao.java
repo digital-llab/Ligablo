@@ -10,5 +10,5 @@ public interface AdminExtensionDao {
     LiveData<List<AdminExtension>> getAdminExtension();
     int insertAdminExtension(AdminExtension adminExtension);
     int updateAdminExtension(AdminExtension adminExtension);
-    int deleteAdminExtension(AdminExtension adminExtension);
+    int deleteAdminExtension(int extensionId,int userId);
 }

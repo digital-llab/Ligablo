@@ -5,6 +5,10 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
+import com.llab.ligablo.database.dao.etabs.AdresseDao;
+import com.llab.ligablo.database.dao.etabs.EtablissementDao;
+import com.llab.ligablo.database.dao.etabs.EtsTypeDao;
+import com.llab.ligablo.database.dao.etabs.ExtensionDao;
 import com.llab.ligablo.database.dao.produits.ContenantDao;
 import com.llab.ligablo.database.dao.produits.DimensionDao;
 import com.llab.ligablo.database.dao.produits.MontantContenanceDao;
@@ -14,6 +18,16 @@ import com.llab.ligablo.database.dao.produits.MontantTypeDao;
 import com.llab.ligablo.database.dao.produits.ProduitTypeDao;
 import com.llab.ligablo.database.dao.produits.ProduitsDao;
 import com.llab.ligablo.database.dao.produits.StockDao;
+import com.llab.ligablo.database.dao.users.AdminExtensionDao;
+import com.llab.ligablo.database.dao.users.UserDao;
+import com.llab.ligablo.database.dao.vente.DeviseDao;
+import com.llab.ligablo.database.dao.vente.LigneVenteDao;
+import com.llab.ligablo.database.dao.vente.MoyenDao;
+import com.llab.ligablo.database.dao.vente.MoyenPayementDao;
+import com.llab.ligablo.database.dao.vente.PaiementDao;
+import com.llab.ligablo.database.dao.vente.PaiementTypeDao;
+import com.llab.ligablo.database.dao.vente.TauxDao;
+import com.llab.ligablo.database.dao.vente.VenteDao;
 import com.llab.ligablo.models.etab.Adresse;
 import com.llab.ligablo.models.etab.Etablissement;
 import com.llab.ligablo.models.etab.EtsType;
@@ -60,7 +74,25 @@ public abstract class LigabloDatabase extends RoomDatabase {
     public abstract ProduitTypeDao produitTypeDao();
     public abstract MontantContenanceDao montantContenanceDao();
 
-    //FROM USERS by Arsene
+    //FROM USERS by Tadiumi
+    public abstract UserDao userDao();
+    public abstract AdminExtensionDao  adminExtensionDao();
+
+    //FROM ETABS by Tadiumi
+    public abstract AdresseDao adresseDao();
+    public abstract EtablissementDao etablissementDao();
+    public abstract EtsTypeDao etsTypeDao();
+    public abstract ExtensionDao extensionDao();
+
+    //FROM VENTE by Tadiumi
+    public abstract DeviseDao deviseDao();
+    public abstract LigneVenteDao ligneVenteDao();
+    public abstract MoyenDao moyenDao();
+    public abstract MoyenPayementDao moyenPayementDao();
+    public abstract PaiementDao paiementDao();
+    public abstract PaiementTypeDao paiementTypeDao();
+    public abstract TauxDao  tauxDao();
+    public abstract VenteDao venteDao();
 
     // --- INSTANCE --- //
     public static LigabloDatabase getInstance(Context context) {

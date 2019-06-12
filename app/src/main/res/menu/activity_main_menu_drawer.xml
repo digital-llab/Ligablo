@@ -10,37 +10,37 @@
             android:title="Accueil" />
     </group>
 
-    <item android:title="Présentation">
+    <item android:title="Information">
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/activity_main_drawer_presentation"
+                    android:id="@+id/activity_main_drawer_inventaires"
                     android:icon="@drawable/logo1"
-                    android:title="Nouveau Plat" />
+                    android:title="Inventaires" />
                 <item
-                    android:id="@+id/activity_main_drawer_reservation"
+                    android:id="@+id/activity_main_drawer_ventes"
                     android:icon="@drawable/logo1"
-                    android:title="Vos Réservations" />
+                    android:title="Ventes" />
                 <item
-                    android:id="@+id/activity_main_drawer_favoris"
+                    android:id="@+id/activity_main_drawer_stock"
                     android:icon="@drawable/logo1"
-                    android:title="Favoris" />
+                    android:title="Stock" />
 
             </group>
         </menu>
     </item>
 
-    <item android:title="Configuration">
+    <item android:title="Paramètres">
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/activity_main_drawer_Nos_Restaurants"
+                    android:id="@+id/activity_main_drawer_configuration"
                     android:icon="@drawable/logo1"
-                    android:title="Nos Restaurants" />
+                    android:title="Configurations" />
                 <item
-                    android:id="@+id/activity_main_drawer_profile"
+                    android:id="@+id/activity_main_drawer_recouvrement"
                     android:icon="@drawable/logo1"
-                    android:title="Profil" />
+                    android:title="Recouvrement" />
 
                 <item
                     android:id="@+id/activity_main_drawer_conctact"
@@ -48,9 +48,9 @@
                     android:title="Contact" />
 
                 <item
-                    android:id="@+id/activity_main_drawer_parametre"
+                    android:id="@+id/activity_main_drawer_profil"
                     android:icon="@drawable/logo1"
-                    android:title="Paramètres" />
+                    android:title="Profil" />
             </group>
         </menu>
     </item>

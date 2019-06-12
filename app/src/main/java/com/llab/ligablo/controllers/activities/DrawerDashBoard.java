@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,7 +17,7 @@ import com.llab.ligablo.base.Base;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class DrawerDashBoard extends Base {
+public class DrawerDashBoard extends Base implements NavigationView.OnNavigationItemSelectedListener {
 
     @BindView(R.id.activity_main_drawer_layout)
     DrawerLayout drawerLayout;
@@ -27,8 +28,9 @@ public class DrawerDashBoard extends Base {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+this.configureDrawerLayout();
         this.configureToolbar();
+        this.configureNavigationView();
     }
 
     @Override
@@ -81,5 +83,48 @@ public class DrawerDashBoard extends Base {
     }
 
 
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle Navigation Item Click
+        int id = item.getItemId();
+
+        switch (id){
+            case R.id.activity_main_drawer_accueil :
+                break;
+            case R.id.activity_main_drawer_conctact:
+                // Start appropriate activity
+                Toast.makeText(DrawerDashBoard.this, " item contact du drawer clické ", Toast.LENGTH_SHORT).show();
+                    //this.startContactActivity();
+
+                break;
+            case R.id.activity_main_drawer_profil:
+                // Check if user is connected before launching BookingActivity
+
+                break;
+            default:
+                break;
+        }
+
+        this.drawerLayout.closeDrawer(GravityCompat.START);
+
+        return true;
+
+    }
+
+    private void startContactActivity() {
+        Intent contactIntent = new Intent(DrawerDashBoard.this, MainActivity.class);
+        startActivity(contactIntent);
+    }
+
+    protected void configureNavigationView(){
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    protected void configureDrawerLayout(){
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+    }
 
 }

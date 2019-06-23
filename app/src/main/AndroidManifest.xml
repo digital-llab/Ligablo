@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controllers.activities.DrawerDashBoard"></activity>
+        <activity android:name=".controllers.activities.Formulaire_Extension"></activity>
+        <activity android:name=".controllers.activities.Etablissement_Creation" />
+        <activity android:name=".controllers.activities.DrawerDashBoard" />
         <activity
             android:name=".controllers.activities.EnregistrementActivity"
             android:label="Enregistrement"

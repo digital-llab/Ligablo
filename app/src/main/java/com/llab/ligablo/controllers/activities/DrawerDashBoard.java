@@ -3,6 +3,8 @@ package com.llab.ligablo.controllers.activities;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,7 +19,7 @@ import com.llab.ligablo.base.Base;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class DrawerDashBoard extends Base implements NavigationView.OnNavigationItemSelectedListener {
+public class DrawerDashBoard extends Base implements NavigationView.OnNavigationItemSelectedListener, MyDialogFragment.DialogListener {
 
     @BindView(R.id.activity_main_drawer_layout)
     DrawerLayout drawerLayout;
@@ -37,10 +39,26 @@ this.configureDrawerLayout();
     public int getLayoutContentViewId() {
         return R.layout.activity_drawer_dash_board;
     }
-    //connection des differentes activity venant du dashboard
+    //connection avec les differentes activity venant du dashboard
     @OnClick(R.id.configurationCard)
     public  void onClickConfiguration() {
-        Toast.makeText(DrawerDashBoard.this, " Card de configuration cliqué ", Toast.LENGTH_LONG).show();
+        
+        MyDialogFragment dialogFragment = new MyDialogFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("notAlertDialog", true);
+
+        dialogFragment.setArguments(bundle);
+
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        Fragment prev = getSupportFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+
+
+        dialogFragment.show(ft, "dialog");
 
 
     }
@@ -127,4 +145,8 @@ this.configureDrawerLayout();
         toggle.syncState();
     }
 
+    @Override
+    public void onFinishEditDialog(String inputText) {
+
+    }
 }

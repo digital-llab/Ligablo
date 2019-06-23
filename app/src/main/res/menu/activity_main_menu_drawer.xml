@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/activity_main_drawer_accueil"
-            android:icon="@drawable/logo1"
+            android:icon="@drawable/welcomeico"
             android:title="Accueil" />
     </group>
 
@@ -15,15 +15,15 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/activity_main_drawer_inventaires"
-                    android:icon="@drawable/logo1"
+                    android:icon="@drawable/inventoryico"
                     android:title="Inventaires" />
                 <item
                     android:id="@+id/activity_main_drawer_ventes"
-                    android:icon="@drawable/logo1"
+                    android:icon="@drawable/salesico"
                     android:title="Ventes" />
                 <item
                     android:id="@+id/activity_main_drawer_stock"
-                    android:icon="@drawable/logo1"
+                    android:icon="@drawable/stockico"
                     android:title="Stock" />
 
             </group>
@@ -35,11 +35,11 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/activity_main_drawer_configuration"
-                    android:icon="@drawable/logo1"
+                    android:icon="@drawable/configico"
                     android:title="Configurations" />
                 <item
                     android:id="@+id/activity_main_drawer_recouvrement"
-                    android:icon="@drawable/logo1"
+                    android:icon="@drawable/recouvrementico"
                     android:title="Recouvrement" />
 
                 <item
@@ -49,7 +49,7 @@
 
                 <item
                     android:id="@+id/activity_main_drawer_profil"
-                    android:icon="@drawable/logo1"
+                    android:icon="@drawable/profilico"
                     android:title="Profil" />
             </group>
         </menu>

@@ -43,7 +43,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
 
-                    android:src="@drawable/top_up"
+                    android:src="@drawable/configico"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
 
-                    android:src="@drawable/logo1"
+                    android:src="@drawable/stockico"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -133,7 +133,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
 
-                    android:src="@drawable/logo1"
+                    android:src="@drawable/salesico"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -172,13 +172,12 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
 
-                    android:src="@drawable/top_up"
-                    android:padding="10dp"
-                    />
+                    android:src="@drawable/inventoryico"
+                    android:padding="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -232,7 +231,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
 
-                    android:src="@drawable/logo1"
+                    android:src="@drawable/recouvrementico"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"

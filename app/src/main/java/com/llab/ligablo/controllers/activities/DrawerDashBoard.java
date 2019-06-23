@@ -1,14 +1,12 @@
 package com.llab.ligablo.controllers.activities;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -19,7 +17,7 @@ import com.llab.ligablo.base.Base;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class DrawerDashBoard extends Base implements NavigationView.OnNavigationItemSelectedListener, MyDialogFragment.DialogListener {
+public class DrawerDashBoard extends Base implements NavigationView.OnNavigationItemSelectedListener, ConfigurationDialogFragment.DialogListener, StockDialogFragment.DialogListener {
 
     @BindView(R.id.activity_main_drawer_layout)
     DrawerLayout drawerLayout;
@@ -42,8 +40,8 @@ this.configureDrawerLayout();
     //connection avec les differentes activity venant du dashboard
     @OnClick(R.id.configurationCard)
     public  void onClickConfiguration() {
-        
-        MyDialogFragment dialogFragment = new MyDialogFragment();
+
+        ConfigurationDialogFragment dialogFragment = new ConfigurationDialogFragment();
 
         Bundle bundle = new Bundle();
         bundle.putBoolean("notAlertDialog", true);
@@ -66,28 +64,46 @@ this.configureDrawerLayout();
     @OnClick(R.id.stockCard)
     public  void onClickStock() {
         Toast.makeText(DrawerDashBoard.this, " Card de stock cliqué ", Toast.LENGTH_LONG).show();
+        StockDialogFragment dialogFragment2 = new StockDialogFragment();
 
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("stockAlertDialog", true);
+
+        dialogFragment2.setArguments(bundle);
+
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        Fragment prev = getSupportFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+
+
+        dialogFragment2.show(ft, "dialog");
 
     }
 
     @OnClick(R.id.inventaireCard)
     public  void onClickInventaire() {
-        Toast.makeText(DrawerDashBoard.this, " Card de Inventaire cliqué ", Toast.LENGTH_LONG).show();
 
+        Intent inventaire = new Intent(DrawerDashBoard.this, Inventaire.class);
+        startActivity(inventaire);
 
     }
 
     @OnClick(R.id.recouvrementCard)
     public  void onClickRecouvrement() {
         Toast.makeText(DrawerDashBoard.this, " Card de Recouvrement cliqué ", Toast.LENGTH_LONG).show();
-
+        Intent recouvrement = new Intent(DrawerDashBoard.this, Recouvrement.class);
+        startActivity(recouvrement);
 
     }
 
     @OnClick(R.id.ventesCard)
     public  void onClickVentes() {
-        Toast.makeText(DrawerDashBoard.this, " Card de ventes cliqué ", Toast.LENGTH_LONG).show();
 
+        Intent ventes = new Intent(DrawerDashBoard.this, Ventes.class);
+        startActivity(ventes);
 
     }
     @Override

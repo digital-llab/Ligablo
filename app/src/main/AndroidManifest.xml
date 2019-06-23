@@ -9,9 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controllers.activities.Formulaire_Extension"></activity>
-        <activity android:name=".controllers.activities.Etablissement_Creation" />
-        <activity android:name=".controllers.activities.DrawerDashBoard" />
+        <activity android:name=".controllers.activities.Recouvrement"></activity>
+        <activity android:name=".controllers.activities.Inventaire" />
+        <activity android:name=".controllers.activities.Ventes" />
+        <activity
+            android:name=".controllers.activities.Formulaire_Extension"
+            android:label="Extensions" />
+        <activity
+            android:name=".controllers.activities.Etablissement_Creation"
+            android:label="Info de l&apos;Etablissement" />
+        <activity
+            android:name=".controllers.activities.DrawerDashBoard"
+            android:label="Acceuil" />
         <activity
             android:name=".controllers.activities.EnregistrementActivity"
             android:label="Enregistrement"

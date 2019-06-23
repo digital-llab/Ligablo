@@ -18,7 +18,7 @@ import android.widget.EditText;
 
 import com.llab.ligablo.R;
 
-public class MyDialogFragment extends DialogFragment {
+public class ConfigurationDialogFragment extends DialogFragment {
 
     @NonNull
     @Override
@@ -67,14 +67,28 @@ public class MyDialogFragment extends DialogFragment {
 
 
 
-        Button btnDone = view.findViewById(R.id.btnDone);
-        btnDone.setOnClickListener(new View.OnClickListener() {
+        Button btnRegisterMyBusiness = view.findViewById(R.id.btnRegisterMyBusiness);
+        btnRegisterMyBusiness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 //DialogListener dialogListener = (DialogListener) getActivity();
                 //dialogListener.onFinishEditDialog(editText.getText().toString());
                 Intent i= new Intent(getContext(),Etablissement_Creation.class);
+
+                startActivity(i);
+                dismiss();
+            }
+        });
+
+        Button btnAddExtensions = view.findViewById(R.id.btnAddExtensions);
+        btnAddExtensions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //DialogListener dialogListener = (DialogListener) getActivity();
+                //dialogListener.onFinishEditDialog(editText.getText().toString());
+                Intent i= new Intent(getContext(),Formulaire_Extension.class);
 
                 startActivity(i);
                 dismiss();
@@ -92,15 +106,6 @@ public class MyDialogFragment extends DialogFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.d("API123", "onCreate");
-
-        boolean setFullScreen = false;
-        if (getArguments() != null) {
-            setFullScreen = getArguments().getBoolean("fullScreen");
-        }
-
-        if (setFullScreen)
-            setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
     }
 
     @Override

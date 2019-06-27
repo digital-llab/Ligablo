@@ -11,8 +11,11 @@ import java.util.List;
 @Dao
 public interface EtablissementDao {
 
-    @Query("SELECT * FROM Etablissement WHERE userId = :userId")
+    @Query("SELECT * FROM Etablissement WHERE userId = :userId ORDER BY id DESC")
     LiveData<List<Etablissement>> getEtablissements(int userId);
+
+    @Query("SELECT * FROM Etablissement WHERE userId = :userId AND id=:etabId")
+    LiveData<List<Etablissement>> getEtablissement(int userId,int etabId);
 
     @Insert
     int insertEtablissement(Etablissement etablissement);

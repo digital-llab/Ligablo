@@ -11,7 +11,7 @@ import java.util.List;
 @Dao
 public interface AdresseDao {
 
-    @Query("SELECT * FROM Adresse")
+    @Query("SELECT * FROM Adresse ORDER BY id DESC")
     LiveData<List<Adresse>> getAdresses();
 
     @Query("SELECT id FROM Adresse ORDER BY id DESC LIMIT 1")

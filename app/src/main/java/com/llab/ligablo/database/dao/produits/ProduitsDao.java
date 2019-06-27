@@ -13,13 +13,13 @@ import java.util.List;
 @Dao
 public interface ProduitsDao {
 
-    @Query("SELECT * FROM Produits")
+    @Query("SELECT * FROM Produits ORDER BY id DESC")
     LiveData<List<Produits>> getProduits();
 
     @Query("SELECT * FROM Produits WHERE id=:produitId")
     LiveData<Produits> getProduitById(int produitId);
 
-    @Query("SELECT * FROM Produits WHERE produitTypeId=:typeId")
+    @Query("SELECT * FROM Produits WHERE produitTypeId=:typeId ORDER BY id DESC")
     LiveData<List<Produits>> getProduitByType(int typeId);
 
     @Insert

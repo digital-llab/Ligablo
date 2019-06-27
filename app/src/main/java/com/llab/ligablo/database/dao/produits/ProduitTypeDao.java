@@ -13,7 +13,7 @@ import java.util.List;
 @Dao
 public interface ProduitTypeDao {
 
-    @Query("SELECT * FROM ProduitType")
+    @Query("SELECT * FROM ProduitType ORDER BY id DESC")
     LiveData<List<ProduitType>> getProduitTypes();
 
     @Insert

@@ -10,7 +10,6 @@ import java.util.List;
 
 @Dao
 public interface ExtensionDao {
-
     @Query("SELECT * FROM Extension")
     LiveData<List<Extension>> getExtensions();
 

@@ -11,7 +11,7 @@ import java.util.List;
 @Dao
 public interface EtsTypeDao {
 
-    @Query("SELECT * FROM EtsType")
+    @Query("SELECT * FROM EtsType ORDER BY id DESC")
     LiveData<List<EtsType>> getEtsTypes();
 
     @Insert

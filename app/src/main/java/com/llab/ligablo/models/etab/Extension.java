@@ -1,19 +1,24 @@
 package com.llab.ligablo.models.etab;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.llab.ligablo.models.users.User;
 
-@Entity(foreignKeys = {@ForeignKey(entity = Etablissement.class, parentColumns = "id", childColumns = "etsId"),
+@Entity(tableName = "Extension",foreignKeys = {@ForeignKey(entity = Etablissement.class, parentColumns = "id", childColumns = "etsId"),
                        @ForeignKey(entity = Adresse.class, parentColumns = "id", childColumns = "adresseId"),})
 public class Extension {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
     private int id;
+    @ColumnInfo(name = "adresseId")
     private int adresseId;
+    @ColumnInfo(name = "etsId")
     private int etsId;
+    @ColumnInfo(name = "telephone")
     private String telephone;
 
     public Extension() {

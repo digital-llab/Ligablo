@@ -1,11 +1,14 @@
 package com.llab.ligablo.models.vente;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.ColumnInfo;
 
-@Entity
+@Entity(tableName = "Taux")
 public class Taux {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
     private int id;
+    @ColumnInfo(name="valeur")
     private Double valeur;
 
     public Taux() {

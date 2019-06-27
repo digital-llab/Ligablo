@@ -1,14 +1,19 @@
 package com.llab.ligablo.models.vente;
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(foreignKeys = @ForeignKey(entity = Taux.class,parentColumns = "id",childColumns = "TauxId"))
+@Entity(tableName = "Devise",foreignKeys = @ForeignKey(entity = Taux.class,parentColumns = "id",childColumns = "TauxId"))
 public class Devise {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
     private int id;
+    @ColumnInfo(name="nom")
     private String nom;
+    @ColumnInfo(name="symbole")
     private String symbole;
+    @ColumnInfo(name="TauxId")
     private int TauxId;
 
     public Devise() {

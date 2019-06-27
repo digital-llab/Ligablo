@@ -1,18 +1,23 @@
 package com.llab.ligablo.models.vente;
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Entity;
 
 import com.llab.ligablo.models.produits.Contenant;
 
-@Entity(foreignKeys ={@ForeignKey(entity =LigneVente.class ,parentColumns ="id",childColumns ="ligneVenteId"),
+@Entity(tableName = "PaiementType",foreignKeys ={@ForeignKey(entity =LigneVente.class ,parentColumns ="id",childColumns ="ligneVenteId"),
                       @ForeignKey(entity =Paiement.class ,parentColumns ="id",childColumns ="paiementId"),
                       @ForeignKey(entity =Contenant.class,parentColumns ="id",childColumns ="contenantId")})
 public class PaiementType {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
     private int id;
+    @ColumnInfo(name="ligneVenteId")
     private int ligneVenteId;
+    @ColumnInfo(name="paiementId")
     private int paiementId;
+    @ColumnInfo(name="contenantId")
     private int contenantId;
 
     public PaiementType() {

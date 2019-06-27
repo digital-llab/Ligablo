@@ -1,20 +1,26 @@
 package com.llab.ligablo.models.produits;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
 import java.util.Date;
 
-@Entity(foreignKeys = {@ForeignKey(entity = Montant.class, parentColumns = "id", childColumns = "montantId"),
+@Entity(tableName = "MontantStock",foreignKeys = {@ForeignKey(entity = Montant.class, parentColumns = "id", childColumns = "montantId"),
                        @ForeignKey(entity = Stock.class, parentColumns = "id", childColumns = "stockId")})
 public class MontantStock {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
     private int id;
+    @ColumnInfo(name="montantId")
     private int montantId;
+    @ColumnInfo(name="stockId")
     private int stockId;
+    @ColumnInfo(name="valeurAchat")
     private Double valeurAchat;
+    @ColumnInfo(name="date")
     private Date date;
 
     public MontantStock() {

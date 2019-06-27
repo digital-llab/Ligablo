@@ -1,19 +1,24 @@
 package com.llab.ligablo.models.produits;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.llab.ligablo.models.vente.Devise;
 
-@Entity(foreignKeys = {@ForeignKey(entity = MontantType.class, parentColumns = "id", childColumns = "typeMontantId"),
+@Entity(tableName = "Montant",foreignKeys = {@ForeignKey(entity = MontantType.class, parentColumns = "id", childColumns = "typeMontantId"),
                        @ForeignKey(entity = Devise.class, parentColumns = "id", childColumns = "deviseId")})
 public class Montant {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
     private int id;
+    @ColumnInfo(name="typeMontantId")
     private int typeMontantId;
+    @ColumnInfo(name="deviseId")
     private int deviseId;
+    @ColumnInfo(name="valeur")
     private Double valeur;
 
     public Montant() {

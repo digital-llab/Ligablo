@@ -1,16 +1,22 @@
 package com.llab.ligablo.models.etab;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "Adresse")
 public class Adresse {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
     private int id;
+    @ColumnInfo(name="ville")
     private String ville;
+    @ColumnInfo(name="quartier")
     private String quartier;
+    @ColumnInfo(name="commune")
     private String commune;
+    @ColumnInfo(name="numero")
     private String numero;
 
     public Adresse() {

@@ -1,12 +1,15 @@
 package com.llab.ligablo.models.vente;
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Entity;
 
-@Entity(foreignKeys = @ForeignKey(entity = Moyen.class,parentColumns = "id",childColumns = "MoyenId"))
+@Entity(tableName = "MoyenPaiement",foreignKeys = @ForeignKey(entity = Moyen.class,parentColumns = "id",childColumns = "MoyenId"))
 public class MoyenPaiement {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
     private int id;
+    @ColumnInfo(name="MoyenId")
     private int MoyenId;
 
     public MoyenPaiement() {

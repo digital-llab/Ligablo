@@ -1,17 +1,21 @@
 package com.llab.ligablo.models.produits;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(foreignKeys = @ForeignKey(entity = ProduitType.class,
+@Entity(tableName = "Produits",foreignKeys = @ForeignKey(entity = ProduitType.class,
         parentColumns = "id",
         childColumns = "produitTypeId"))
 public class Produits {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
     private int id;
+    @ColumnInfo(name="nom")
     private String nom;
+    @ColumnInfo(name="produitTypeId")
     private int produitTypeId;
 
     public Produits() {

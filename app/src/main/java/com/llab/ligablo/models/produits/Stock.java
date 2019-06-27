@@ -1,31 +1,39 @@
 package com.llab.ligablo.models.produits;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
+import com.llab.ligablo.models.etab.Extension;
 import com.llab.ligablo.models.users.User;
 
 import java.util.Date;
 
-@Entity(foreignKeys = {@ForeignKey(entity = Produits.class, parentColumns = "id", childColumns = "produitId"),
-                       @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"),})
+@Entity(tableName="Stock",foreignKeys = {@ForeignKey(entity = Produits.class, parentColumns = "id", childColumns = "produitId"),
+                       @ForeignKey(entity = Extension.class, parentColumns = "id", childColumns = "extensionId"),})
 public class Stock {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
     private int id;
-    private int userId;
+    @ColumnInfo(name="extensionId")
+    private int extensionId;
+    @ColumnInfo(name="produitId")
     private int produitId;
+    @ColumnInfo(name="quantite")
     private int quantite;
+    @ColumnInfo(name="nombre")
     private int nombre;
+    @ColumnInfo(name="date")
     private Date date;
 
     public Stock() {
     }
 
-    public Stock(int id, int userId, int produitId, int quantite, int nombre, Date date) {
+    public Stock(int id, int extensionId, int produitId, int quantite, int nombre, Date date) {
         this.id = id;
-        this.userId = userId;
+        this.extensionId = extensionId;
         this.produitId = produitId;
         this.quantite = quantite;
         this.nombre = nombre;
@@ -40,12 +48,12 @@ public class Stock {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getExtensionId() {
+        return extensionId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setExtensionId(int extensionId) {
+        this.extensionId = extensionId;
     }
 
     public int getProduitId() {

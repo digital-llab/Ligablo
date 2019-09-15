@@ -13,9 +13,6 @@ public class ProduitType {
     @ColumnInfo(name="nom")
     private String nom;
 
-    public ProduitType() {
-    }
-
     public ProduitType(int id, String nom) {
         this.id = id;
         this.nom = nom;

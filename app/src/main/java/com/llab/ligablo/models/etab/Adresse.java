@@ -19,9 +19,6 @@ public class Adresse {
     @ColumnInfo(name="numero")
     private String numero;
 
-    public Adresse() {
-    }
-
     public Adresse(int id, String ville, String quartier, String commune, String numero) {
         this.id = id;
         this.ville = ville;

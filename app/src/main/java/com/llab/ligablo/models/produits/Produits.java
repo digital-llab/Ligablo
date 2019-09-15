@@ -18,8 +18,6 @@ public class Produits {
     @ColumnInfo(name="produitTypeId")
     private int produitTypeId;
 
-    public Produits() {
-    }
 
     public Produits(int id, String nom, int produitTypeId) {
         this.id = id;

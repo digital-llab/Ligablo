@@ -17,7 +17,7 @@ public interface ProduitTypeDao {
     LiveData<List<ProduitType>> getProduitTypes();
 
     @Insert
-    int insertProduitType(ProduitType produitType);
+    long insertProduitType(ProduitType produitType);
 
     @Update
     int updateProduitType(ProduitType produitType);

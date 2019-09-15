@@ -4,7 +4,6 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ColumnInfo;
 import com.llab.ligablo.models.etab.Extension;
-import java.util.Date;
 
 @Entity(tableName = "Vente",foreignKeys = @ForeignKey(entity =Extension.class ,parentColumns ="id",childColumns ="extensionId" ))
 public class Vente {
@@ -14,12 +13,10 @@ public class Vente {
     @ColumnInfo(name = "extensionId")
     private int extensionId;
     @ColumnInfo(name = "date")
-    private Date date;
+    private String date;
 
-    public Vente() {
-    }
 
-    public Vente(int id, int extensionId, Date date) {
+    public Vente(int id, int extensionId, String date) {
         this.id = id;
         this.extensionId = extensionId;
         this.date = date;
@@ -41,11 +38,11 @@ public class Vente {
         this.extensionId = extensionId;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

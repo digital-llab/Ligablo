@@ -18,7 +18,7 @@ public interface EtablissementDao {
     LiveData<List<Etablissement>> getEtablissement(int userId,int etabId);
 
     @Insert
-    int insertEtablissement(Etablissement etablissement);
+    long insertEtablissement(Etablissement etablissement);
 
     @Update
     int updateEtablissement(Etablissement etablissement);

@@ -15,8 +15,6 @@ public class Dimension {
     @ColumnInfo(name="capacite")
     private Double capacite;
 
-    public Dimension() {
-    }
 
     public Dimension(int id, Double poid, Double capacite) {
         this.id = id;

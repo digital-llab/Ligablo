@@ -5,8 +5,6 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-import java.util.Date;
-
 @Entity(tableName = "MontantStock",foreignKeys = {@ForeignKey(entity = Montant.class, parentColumns = "id", childColumns = "montantId"),
                        @ForeignKey(entity = Stock.class, parentColumns = "id", childColumns = "stockId")})
 public class MontantStock {
@@ -21,12 +19,9 @@ public class MontantStock {
     @ColumnInfo(name="valeurAchat")
     private Double valeurAchat;
     @ColumnInfo(name="date")
-    private Date date;
+    private String date;
 
-    public MontantStock() {
-    }
-
-    public MontantStock(int id, int montantId, int stockId, Double valeurAchat, Date date) {
+    public MontantStock(int id, int montantId, int stockId, Double valeurAchat, String date) {
         this.id = id;
         this.montantId = montantId;
         this.stockId = stockId;
@@ -66,11 +61,11 @@ public class MontantStock {
         this.valeurAchat = valeurAchat;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

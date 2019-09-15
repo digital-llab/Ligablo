@@ -13,9 +13,6 @@ public class EtsType {
     @ColumnInfo(name = "nom")
     private String nom;
 
-    public EtsType() {
-    }
-
     public EtsType(int id, String nom) {
         this.id = id;
         this.nom = nom;

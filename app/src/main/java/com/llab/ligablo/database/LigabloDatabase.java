@@ -20,14 +20,6 @@ import com.llab.ligablo.database.dao.produits.ProduitsDao;
 import com.llab.ligablo.database.dao.produits.StockDao;
 import com.llab.ligablo.database.dao.users.AdminExtensionDao;
 import com.llab.ligablo.database.dao.users.UserDao;
-import com.llab.ligablo.database.dao.vente.DeviseDao;
-import com.llab.ligablo.database.dao.vente.LigneVenteDao;
-import com.llab.ligablo.database.dao.vente.MoyenDao;
-import com.llab.ligablo.database.dao.vente.MoyenPayementDao;
-import com.llab.ligablo.database.dao.vente.PaiementDao;
-import com.llab.ligablo.database.dao.vente.PaiementTypeDao;
-import com.llab.ligablo.database.dao.vente.TauxDao;
-import com.llab.ligablo.database.dao.vente.VenteDao;
 import com.llab.ligablo.models.etab.Adresse;
 import com.llab.ligablo.models.etab.Etablissement;
 import com.llab.ligablo.models.etab.EtsType;
@@ -84,7 +76,7 @@ public abstract class LigabloDatabase extends RoomDatabase {
     public abstract EtsTypeDao etsTypeDao();
     public abstract ExtensionDao extensionDao();
 
-    //FROM VENTE by Tadiumi
+/*    //FROM VENTE by Tadiumi
     public abstract DeviseDao deviseDao();
     public abstract LigneVenteDao ligneVenteDao();
     public abstract MoyenDao moyenDao();
@@ -92,7 +84,7 @@ public abstract class LigabloDatabase extends RoomDatabase {
     public abstract PaiementDao paiementDao();
     public abstract PaiementTypeDao paiementTypeDao();
     public abstract TauxDao  tauxDao();
-    public abstract VenteDao venteDao();
+    public abstract VenteDao venteDao();*/
 
     // --- INSTANCE --- //
     public static LigabloDatabase getInstance(Context context) {

@@ -20,7 +20,7 @@ public interface MontantContenanceDao {
     LiveData<List<MontantContenance>> getMontantContenances(int montantContenanceId);
 
     @Insert
-    int insertMontantContenance(MontantContenance montantContenance);
+    long insertMontantContenance(MontantContenance montantContenance);
 
     @Update
     int updateMontantContenance(MontantContenance montantContenance);

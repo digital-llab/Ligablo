@@ -13,8 +13,6 @@ public class MontantType {
     @ColumnInfo(name="nom")
     private String nom;
 
-    public MontantType() {
-    }
 
     public MontantType(int id, String nom) {
         this.id = id;

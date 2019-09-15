@@ -20,8 +20,6 @@ public class PaiementType {
     @ColumnInfo(name="contenantId")
     private int contenantId;
 
-    public PaiementType() {
-    }
 
     public PaiementType(int id, int ligneVenteId, int paiementId, int contenantId) {
         this.id = id;

@@ -11,8 +11,6 @@ public class Moyen {
     @ColumnInfo(name="valeur")
     private String valeur;
 
-    public Moyen() {
-    }
 
     public Moyen(int id, String valeur) {
         this.id = id;

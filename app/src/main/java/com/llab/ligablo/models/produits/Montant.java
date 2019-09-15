@@ -21,8 +21,6 @@ public class Montant {
     @ColumnInfo(name="valeur")
     private Double valeur;
 
-    public Montant() {
-    }
 
     public Montant(int id, int typeMontantId, int deviseId, Double valeur) {
         this.id = id;

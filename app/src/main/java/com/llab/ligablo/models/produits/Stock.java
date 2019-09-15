@@ -6,9 +6,6 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.llab.ligablo.models.etab.Extension;
-import com.llab.ligablo.models.users.User;
-
-import java.util.Date;
 
 @Entity(tableName="Stock",foreignKeys = {@ForeignKey(entity = Produits.class, parentColumns = "id", childColumns = "produitId"),
                        @ForeignKey(entity = Extension.class, parentColumns = "id", childColumns = "extensionId"),})
@@ -26,12 +23,9 @@ public class Stock {
     @ColumnInfo(name="nombre")
     private int nombre;
     @ColumnInfo(name="date")
-    private Date date;
+    private String date;
 
-    public Stock() {
-    }
-
-    public Stock(int id, int extensionId, int produitId, int quantite, int nombre, Date date) {
+    public Stock(int id, int extensionId, int produitId, int quantite, int nombre, String date) {
         this.id = id;
         this.extensionId = extensionId;
         this.produitId = produitId;
@@ -80,11 +74,11 @@ public class Stock {
         this.nombre = nombre;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

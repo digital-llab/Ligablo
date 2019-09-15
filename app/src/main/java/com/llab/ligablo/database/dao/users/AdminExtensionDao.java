@@ -15,7 +15,7 @@ public interface AdminExtensionDao {
     LiveData<List<AdminExtension>> getAdminExtension();
 
     @Insert
-    int insertAdminExtension(AdminExtension adminExtension);
+    long insertAdminExtension(AdminExtension adminExtension);
 
     @Update
     int updateAdminExtension(AdminExtension adminExtension);

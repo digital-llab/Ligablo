@@ -26,7 +26,7 @@ public interface MontantDao {
     LiveData<List<Montant>> getMontant_ByTypeAndDevise(int deviseId,int typemontantId);
 
     @Insert
-    int insertMontant(Montant montant);
+    long insertMontant(Montant montant);
 
     @Update
     int updateMontant(Montant montant);

@@ -15,7 +15,7 @@ public interface MontantTypeDao {
     @Query("SELECT * FROM montanttype ORDER BY id")
     LiveData<List<MontantType>> getMontantTypes();
     @Insert
-    int insertMontantType(MontantType montantType);
+    long insertMontantType(MontantType montantType);
     @Update
     int updateMontantType(MontantType montantType);
     @Query("DELETE FROM MontantType WHERE id=:montantTypeId")

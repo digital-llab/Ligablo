@@ -15,7 +15,7 @@ public interface EtsTypeDao {
     LiveData<List<EtsType>> getEtsTypes();
 
     @Insert
-    int insertEtsType(EtsType etsType);
+    long insertEtsType(EtsType etsType);
 
     @Update
     int updateEtsType(EtsType etsType);

@@ -23,9 +23,6 @@ public class LigneVente {
     @ColumnInfo(name="quantite")
     private Double quantite;
 
-    public LigneVente() {
-    }
-
     public LigneVente(int id, int produitId, int venteId, int contenantId, Double quantite) {
         this.id = id;
         this.produitId = produitId;

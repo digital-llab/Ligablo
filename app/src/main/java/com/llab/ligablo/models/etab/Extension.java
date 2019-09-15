@@ -21,8 +21,6 @@ public class Extension {
     @ColumnInfo(name = "telephone")
     private String telephone;
 
-    public Extension() {
-    }
 
     public Extension(int id, int adresseId, int etsId, String telephone) {
         this.id = id;

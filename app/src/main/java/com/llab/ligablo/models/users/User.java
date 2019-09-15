@@ -20,8 +20,6 @@ public class User {
     @ColumnInfo(name = "managerId")
     private int managerId;
 
-    public User() {
-    }
 
     public User(int id, String nom, String email, String telephone, int managerId) {
         this.id = id;

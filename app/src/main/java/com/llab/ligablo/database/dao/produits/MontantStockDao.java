@@ -15,7 +15,7 @@ public interface MontantStockDao {
     @Query("SELECT * FROM MontantStock ORDER BY id DESC")
     LiveData<List<MontantStock>> getMontantStocks();
     @Insert
-    int insertMontantStock(MontantStock montantStock);
+    long insertMontantStock(MontantStock montantStock);
     @Update
     int updateMontantStock(MontantStock montantStock);
     @Query("SELECT * FROM MontantStock WHERE id=:montantStockId")

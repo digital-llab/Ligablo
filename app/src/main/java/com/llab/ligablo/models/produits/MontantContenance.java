@@ -25,9 +25,6 @@ public class MontantContenance {
     @ColumnInfo(name="montantId")
     private int montantId;
 
-    public MontantContenance() {
-    }
-
     public MontantContenance(int id, int contenantId, int produitId, int etsId, int montantId) {
         this.id = id;
         this.contenantId = contenantId;

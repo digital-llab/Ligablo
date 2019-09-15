@@ -23,7 +23,7 @@ public interface ProduitsDao {
     LiveData<List<Produits>> getProduitByType(int typeId);
 
     @Insert
-    int insertProduit(Produits produits);
+    long insertProduit(Produits produits);
 
     @Update
     int updateProduit(Produits produits);

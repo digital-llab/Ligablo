@@ -11,8 +11,6 @@ public class Taux {
     @ColumnInfo(name="valeur")
     private Double valeur;
 
-    public Taux() {
-    }
 
     public Taux(int id, Double valeur) {
         this.id = id;

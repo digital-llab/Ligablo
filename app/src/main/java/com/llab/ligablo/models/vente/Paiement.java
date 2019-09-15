@@ -4,8 +4,6 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.Entity;
 
-import java.util.Date;
-
 @Entity(tableName = "Paiement",foreignKeys = {@ForeignKey(entity =PaiementType.class ,parentColumns = "id",childColumns = "typePaiementId"),
                        @ForeignKey(entity =Devise.class ,parentColumns = "id",childColumns = "deviseId")})
 public class Paiement {
@@ -19,12 +17,9 @@ public class Paiement {
     @ColumnInfo(name="montantPercu")
     private Double montantPercu;
     @ColumnInfo(name="date")
-    private Date date;
+    private String date;
 
-    public Paiement() {
-    }
-
-    public Paiement(int id, int typePaiementId, int deviseId, Double montantPercu, Date date) {
+    public Paiement(int id, int typePaiementId, int deviseId, Double montantPercu, String date) {
         this.id = id;
         this.typePaiementId = typePaiementId;
         this.deviseId = deviseId;
@@ -64,11 +59,11 @@ public class Paiement {
         this.montantPercu = montantPercu;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

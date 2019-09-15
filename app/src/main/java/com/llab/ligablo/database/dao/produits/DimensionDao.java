@@ -21,7 +21,7 @@ public interface DimensionDao {
     @Query("SELECT * FROM Dimension WHERE capacite=:capacite ORDER BY id DESC")
     LiveData<List<Dimension>> getDimension_ByCapacite(int capacite);
     @Insert
-    int insertDimension(Dimension dimension);
+    long insertDimension(Dimension dimension);
     @Update
     int updateDimension(Dimension dimension);
     @Query("DELETE FROM Dimension WHERE id=:dimensionId")

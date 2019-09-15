@@ -18,7 +18,7 @@ public interface AdresseDao {
     int getLastAdresse();
 
     @Insert
-    int insertAdresse(Adresse adresse);
+    long insertAdresse(Adresse adresse);
 
     @Update
     int updateAdresse(Adresse adresse);

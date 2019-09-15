@@ -1,7 +1,5 @@
 package com.llab.ligablo.models.users;
 
-import java.util.Date;
-
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
@@ -13,21 +11,17 @@ import com.llab.ligablo.models.etab.Extension;
                        @ForeignKey(entity = Extension.class, parentColumns = "id", childColumns = "extensionId"),})
 public class AdminExtension {
 
-    @PrimaryKey
     @ColumnInfo(name = "extensionId")
     private int extensionId;
     @PrimaryKey
     @ColumnInfo(name = "userId")
     private int userId;
     @ColumnInfo(name = "dateDebut")
-    private Date dateDebut;
+    private String dateDebut;
     @ColumnInfo(name = "dateFin")
-    private Date dateFin;
+    private String dateFin;
 
-    public AdminExtension() {
-    }
-
-    public AdminExtension(int extensionId, int userId, Date dateDebut) {
+    public AdminExtension(int extensionId, int userId, String dateDebut) {
         this.extensionId = extensionId;
         this.userId = userId;
         this.dateDebut = dateDebut;
@@ -49,19 +43,19 @@ public class AdminExtension {
         this.userId = userId;
     }
 
-    public Date getDateDebut() {
+    public String getDateDebut() {
         return dateDebut;
     }
 
-    public void setDateDebut(Date dateDebut) {
+    public void setDateDebut(String dateDebut) {
         this.dateDebut = dateDebut;
     }
 
-    public Date getDateFin() {
+    public String getDateFin() {
         return dateFin;
     }
 
-    public void setDateFin(Date dateFin) {
+    public void setDateFin(String dateFin) {
         this.dateFin = dateFin;
     }
 }

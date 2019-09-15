@@ -16,9 +16,6 @@ public class Contenant {
     @ColumnInfo(name = "dimensionId")
     private int dimensionId;
 
-    public Contenant() {
-    }
-
     public Contenant(int id, String nom, int dimensionId) {
         this.id = id;
         this.nom = nom;

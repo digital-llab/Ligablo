@@ -29,10 +29,10 @@ public class UserDaoTest {
 
     private static long USER_ID = 1;
     private static User USER_DEMO = new User(USER_ID, "Alain", "alain.mk@example.com", "0812874638", USER_ID);
-    private static ProduitType ALIMENTAIRE_TYPE = new ProduitType(USER_ID, "Alimentaire");
-    private static Produits TELEVISION_PRODUIT = new Produits("Samsung Ecran plat", USER_ID);
-    private static Produits DECODEUR_CANAL_PLUS = new Produits("Canal+ France de Foot", USER_ID);
-    private static Produits FRIGO_BEKO_TSE = new Produits("Frigo marque Beko Tse 500 littres", USER_ID);
+    private static ProduitType ALIMENTAIRE_TYPE = new ProduitType("Alimentaire");
+    private static Produits TELEVISION_PRODUIT = new Produits("Samsung Ecran plat", 0);
+    private static Produits DECODEUR_CANAL_PLUS = new Produits("Canal+ France de Foot", 0);
+    private static Produits FRIGO_BEKO_TSE = new Produits("Frigo marque Beko Tse 500 littres", 0);
 
     @Rule
     public InstantTaskExecutorRule instantTaskExecutorRule = new InstantTaskExecutorRule();

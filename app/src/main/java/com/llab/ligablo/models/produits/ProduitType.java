@@ -10,8 +10,8 @@ public class ProduitType {
     private long id;
     private String nom;
 
-    public ProduitType(long id, String nom) {
-        this.id = id;
+
+    public ProduitType(String nom) {
         this.nom = nom;
     }
 

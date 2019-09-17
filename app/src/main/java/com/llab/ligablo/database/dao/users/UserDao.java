@@ -11,6 +11,10 @@ import java.util.List;
 
 @Dao
 public interface UserDao {
+
+    @Query("SELECT * FROM User")
+    LiveData<List<User>> getUsers();
+
     @Query("SELECT * FROM User WHERE id=:userId")
     LiveData<User> getUser(long userId);
 

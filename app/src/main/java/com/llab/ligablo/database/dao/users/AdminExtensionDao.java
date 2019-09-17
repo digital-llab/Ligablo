@@ -11,6 +11,7 @@ import java.util.List;
 
 @Dao
 public interface AdminExtensionDao {
+
     @Query("SELECT * FROM AdminExtension ORDER BY dateDebut DESC")
     LiveData<List<AdminExtension>> getAdminExtension();
 

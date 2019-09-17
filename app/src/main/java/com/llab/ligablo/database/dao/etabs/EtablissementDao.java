@@ -17,7 +17,7 @@ public interface EtablissementDao {
     LiveData<List<Etablissement>> getEtablissements(long userId);
 
     @Query("SELECT * FROM Etablissement WHERE userId = :userId AND id=:etabId")
-    LiveData<List<Etablissement>> getEtablissement(long userId, long etabId);
+    LiveData<Etablissement> getEtablissement(long userId, long etabId);
 
     @Insert
     long insertEtablissement(Etablissement etablissement);

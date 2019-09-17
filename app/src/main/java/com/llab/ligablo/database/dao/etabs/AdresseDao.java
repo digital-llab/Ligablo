@@ -25,4 +25,7 @@ public interface AdresseDao {
     @Update
     int updateAdresse(Adresse adresse);
 
+    @Query("DELETE FROM Adresse WHERE id =:adresseId")
+    int deleteAdresse(long adresseId);
+
 }

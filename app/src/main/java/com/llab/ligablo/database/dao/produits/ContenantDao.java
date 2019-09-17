@@ -19,7 +19,7 @@ public interface ContenantDao {
     LiveData<List<Contenant>> getContenant_ByDimension(long dimensionId);
 
     @Insert
-    long insertContentant(Contenant contenant);
+    long insertContenant(Contenant contenant);
     @Update
     int updateContenant(Contenant contenant);
     @Query("DELETE FROM Contenant WHERE id=:contenantId")

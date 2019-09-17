@@ -2,26 +2,20 @@ package com.llab.ligablo.models.users;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.ColumnInfo;
 
-@Entity(tableName = "User",foreignKeys = @ForeignKey(entity = User.class,parentColumns = "id",childColumns = "managerId"))
+@Entity(indices = {@Index("managerId")}, foreignKeys = @ForeignKey(entity = User.class,parentColumns = "id",childColumns = "managerId"))
 public class User {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    private int id;
-    @ColumnInfo(name = "nom")
+    private long id;
     private String nom;
-    @ColumnInfo(name = "email")
     private String email;
-    @ColumnInfo(name = "telephone")
     private String telephone;
-    @ColumnInfo(name = "managerId")
-    private int managerId;
+    private long managerId;
 
-
-    public User(int id, String nom, String email, String telephone, int managerId) {
+    public User(long id, String nom, String email, String telephone, long managerId) {
         this.id = id;
         this.nom = nom;
         this.email = email;
@@ -29,11 +23,18 @@ public class User {
         this.managerId = managerId;
     }
 
-    public int getId() {
+/*    public User(String nom, String email, String telephone, long managerId) {
+        this.nom = nom;
+        this.email = email;
+        this.telephone = telephone;
+        this.managerId = managerId;
+    }*/
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -61,11 +62,11 @@ public class User {
         this.telephone = telephone;
     }
 
-    public int getManagerId() {
+    public long getManagerId() {
         return managerId;
     }
 
-    public void setManagerId(int managerId) {
+    public void setManagerId(long managerId) {
         this.managerId = managerId;
     }
 }

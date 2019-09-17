@@ -1,60 +1,58 @@
 package com.llab.ligablo.models.produits;
 
-import android.arch.persistence.room.ColumnInfo;
+
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.llab.ligablo.models.etab.Extension;
+import com.llab.ligablo.models.users.User;
 
-@Entity(tableName="Stock",foreignKeys = {@ForeignKey(entity = Produits.class, parentColumns = "id", childColumns = "produitId"),
-                       @ForeignKey(entity = Extension.class, parentColumns = "id", childColumns = "extensionId"),})
+@Entity(indices = {@Index("produitId"), @Index("userId"), @Index("extensionId")}, foreignKeys = {@ForeignKey(entity = Produits.class, parentColumns = "id", childColumns = "produitId"),
+                       @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"),
+                       @ForeignKey(entity = Extension.class, parentColumns = "id", childColumns = "extensionId")})
 public class Stock {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    private int id;
-    @ColumnInfo(name="extensionId")
-    private int extensionId;
-    @ColumnInfo(name="produitId")
-    private int produitId;
-    @ColumnInfo(name="quantite")
+    private long id;
+    private long userId;
+    private long produitId;
+    private long extensionId;
     private int quantite;
-    @ColumnInfo(name="nombre")
     private int nombre;
-    @ColumnInfo(name="date")
     private String date;
 
-    public Stock(int id, int extensionId, int produitId, int quantite, int nombre, String date) {
-        this.id = id;
-        this.extensionId = extensionId;
+    public Stock(long userId, long produitId, long extensionId, int quantite, int nombre, String date) {
+        this.userId = userId;
         this.produitId = produitId;
+        this.extensionId = extensionId;
         this.quantite = quantite;
         this.nombre = nombre;
         this.date = date;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getExtensionId() {
-        return extensionId;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setExtensionId(int extensionId) {
-        this.extensionId = extensionId;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
-    public int getProduitId() {
+    public long getProduitId() {
         return produitId;
     }
 
-    public void setProduitId(int produitId) {
+    public void setProduitId(long produitId) {
         this.produitId = produitId;
     }
 
@@ -80,5 +78,13 @@ public class Stock {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public long getExtensionId() {
+        return extensionId;
+    }
+
+    public void setExtensionId(long extensionId) {
+        this.extensionId = extensionId;
     }
 }

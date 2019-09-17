@@ -19,5 +19,5 @@ public interface MontantTypeDao {
     @Update
     int updateMontantType(MontantType montantType);
     @Query("DELETE FROM MontantType WHERE id=:montantTypeId")
-    int deleteMontantType(int montantTypeId);
+    int deleteMontantType(long montantTypeId);
 }

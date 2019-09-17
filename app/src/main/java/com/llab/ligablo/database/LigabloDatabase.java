@@ -5,6 +5,7 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
+
 import com.llab.ligablo.database.dao.etabs.AdresseDao;
 import com.llab.ligablo.database.dao.etabs.EtablissementDao;
 import com.llab.ligablo.database.dao.etabs.EtsTypeDao;

@@ -1,38 +1,35 @@
 package com.llab.ligablo.models.vente;
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.Entity;
 
-@Entity(tableName = "MoyenPaiement",foreignKeys = @ForeignKey(entity = Moyen.class,parentColumns = "id",childColumns = "MoyenId"))
+
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity(indices = {@Index("moyenId")}, foreignKeys = @ForeignKey(entity = Moyen.class,parentColumns = "id",childColumns = "moyenId"))
 public class MoyenPaiement {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    private int id;
-    @ColumnInfo(name="MoyenId")
-    private int MoyenId;
+    private long id;
+    private long moyenId;
 
-    public MoyenPaiement() {
+
+    public MoyenPaiement(long moyenId) {
+        this.moyenId = moyenId;
     }
 
-    public MoyenPaiement(int id, int moyenId) {
-        this.id = id;
-        MoyenId = moyenId;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getMoyenId() {
-        return MoyenId;
+    public long getMoyenId() {
+        return moyenId;
     }
 
-    public void setMoyenId(int moyenId) {
-        MoyenId = moyenId;
+    public void setMoyenId(long moyenId) {
+        this.moyenId = moyenId;
     }
 }

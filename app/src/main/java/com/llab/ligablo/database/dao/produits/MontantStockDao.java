@@ -1,5 +1,6 @@
 package com.llab.ligablo.database.dao.produits;
 
+
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
@@ -19,5 +20,5 @@ public interface MontantStockDao {
     @Update
     int updateMontantStock(MontantStock montantStock);
     @Query("SELECT * FROM MontantStock WHERE id=:montantStockId")
-    int deleteMontantStock(int montantStockId);
+    int deleteMontantStock(long montantStockId);
 }

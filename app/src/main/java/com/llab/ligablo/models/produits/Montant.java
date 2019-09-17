@@ -1,47 +1,41 @@
 package com.llab.ligablo.models.produits;
 
-import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.llab.ligablo.models.vente.Devise;
 
-@Entity(tableName = "Montant",foreignKeys = {@ForeignKey(entity = MontantType.class, parentColumns = "id", childColumns = "typeMontantId"),
+@Entity(indices = {@Index("typeMontantId"), @Index("deviseId")}, foreignKeys = {@ForeignKey(entity = MontantType.class, parentColumns = "id", childColumns = "typeMontantId"),
                        @ForeignKey(entity = Devise.class, parentColumns = "id", childColumns = "deviseId")})
 public class Montant {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    private int id;
-    @ColumnInfo(name="typeMontantId")
-    private int typeMontantId;
-    @ColumnInfo(name="deviseId")
-    private int deviseId;
-    @ColumnInfo(name="valeur")
+    private long id;
+    private long typeMontantId;
+    private long deviseId;
     private Double valeur;
 
-
-    public Montant(int id, int typeMontantId, int deviseId, Double valeur) {
-        this.id = id;
+    public Montant(long typeMontantId, long deviseId, Double valeur) {
         this.typeMontantId = typeMontantId;
         this.deviseId = deviseId;
         this.valeur = valeur;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getDeviseId() {
+    public long getDeviseId() {
         return deviseId;
     }
 
-    public void setDeviseId(int deviseId) {
+    public void setDeviseId(long deviseId) {
         this.deviseId = deviseId;
     }
 
@@ -53,11 +47,11 @@ public class Montant {
         this.valeur = valeur;
     }
 
-    public int getTypeMontantId() {
+    public long getTypeMontantId() {
         return typeMontantId;
     }
 
-    public void setTypeMontantId(int typeMontantId) {
+    public void setTypeMontantId(long typeMontantId) {
         this.typeMontantId = typeMontantId;
     }
 }

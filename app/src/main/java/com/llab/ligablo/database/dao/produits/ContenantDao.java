@@ -16,12 +16,12 @@ public interface ContenantDao {
     LiveData<List<Contenant>> getContenants();
 
     @Query("SELECT * FROM Contenant WHERE dimensionId=:dimensionId ORDER BY id DESC")
-    LiveData<List<Contenant>> getContenant_ByDimension(int dimensionId);
+    LiveData<List<Contenant>> getContenant_ByDimension(long dimensionId);
 
     @Insert
     long insertContentant(Contenant contenant);
     @Update
     int updateContenant(Contenant contenant);
     @Query("DELETE FROM Contenant WHERE id=:contenantId")
-    int deleteContenant(int contenantId);
+    int deleteContenant(long contenantId);
 }

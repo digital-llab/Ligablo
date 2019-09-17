@@ -16,14 +16,14 @@ public interface DimensionDao {
     LiveData<List<Dimension>> getDimensions();
 
     @Query("SELECT * FROM Dimension WHERE poid=:poid ORDER BY id DESC")
-    LiveData<List<Dimension>> getDimension_ByPoid(int poid);
+    LiveData<List<Dimension>> getDimension_ByPoid(long poid);
 
     @Query("SELECT * FROM Dimension WHERE capacite=:capacite ORDER BY id DESC")
-    LiveData<List<Dimension>> getDimension_ByCapacite(int capacite);
+    LiveData<List<Dimension>> getDimension_ByCapacite(long capacite);
     @Insert
     long insertDimension(Dimension dimension);
     @Update
     int updateDimension(Dimension dimension);
     @Query("DELETE FROM Dimension WHERE id=:dimensionId")
-    int deleteDimension(int dimensionId);
+    int deleteDimension(long dimensionId);
 }

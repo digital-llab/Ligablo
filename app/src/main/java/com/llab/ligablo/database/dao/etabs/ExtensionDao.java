@@ -1,4 +1,6 @@
 package com.llab.ligablo.database.dao.etabs;
+
+
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
@@ -15,11 +17,11 @@ public interface ExtensionDao {
     LiveData<List<Extension>> getExtensions();
 
     @Insert
-    int insertExtension(int adresseId,int etsId,String telephone);
+    long insertExtension(Extension extension);
 
     @Update
     int updateExtension(Extension extension);
 
     @Query("DELETE FROM Extension WHERE id =:extensionId")
-    int deleteExtension(int extensionId);
+    int deleteExtension(long extensionId);
 }

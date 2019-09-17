@@ -23,7 +23,7 @@ public interface MontantDao {
     LiveData<List<Montant>> getMontant_ByType(int typemontantId);
 
     @Query("SELECT * FROM Montant  WHERE deviseId=:deviseId AND typeMontantId=:typemontantId ORDER BY id DESC")
-    LiveData<List<Montant>> getMontant_ByTypeAndDevise(int deviseId,int typemontantId);
+    LiveData<List<Montant>> getMontant_ByTypeAndDevise(int deviseId, int typemontantId);
 
     @Insert
     long insertMontant(Montant montant);
@@ -32,5 +32,5 @@ public interface MontantDao {
     int updateMontant(Montant montant);
 
     @Query("DELETE FROM Montant  WHERE id=:montantId")
-    int deleteMontant(int montantId);
+    int deleteMontant(long montantId);
 }

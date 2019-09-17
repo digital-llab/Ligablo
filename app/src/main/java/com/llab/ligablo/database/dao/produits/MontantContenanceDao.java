@@ -26,5 +26,5 @@ public interface MontantContenanceDao {
     int updateMontantContenance(MontantContenance montantContenance);
 
     @Query("DELETE FROM montantcontenance WHERE id=:montantContenanceId")
-    int deleteMontantContenance(int montantContenanceId);
+    int deleteMontantContenance(long montantContenanceId);
 }

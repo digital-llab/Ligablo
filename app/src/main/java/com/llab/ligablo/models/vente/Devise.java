@@ -1,36 +1,30 @@
 package com.llab.ligablo.models.vente;
-import android.arch.persistence.room.ColumnInfo;
+
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "Devise",foreignKeys = @ForeignKey(entity = Taux.class,parentColumns = "id",childColumns = "TauxId"))
+@Entity(indices = {@Index("tauxId")}, foreignKeys = @ForeignKey(entity = Taux.class,parentColumns = "id",childColumns = "tauxId"))
 public class Devise {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    private int id;
-    @ColumnInfo(name="nom")
+    private long id;
     private String nom;
-    @ColumnInfo(name="symbole")
     private String symbole;
-    @ColumnInfo(name="TauxId")
-    private int TauxId;
+    private long tauxId;
 
-    public Devise() {
-    }
 
-    public Devise(int id, String nom, String symbole, int tauxId) {
-        this.id = id;
+    public Devise(String nom, String symbole, long tauxId) {
         this.nom = nom;
         this.symbole = symbole;
-        TauxId = tauxId;
+        this.tauxId = tauxId;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -50,11 +44,11 @@ public class Devise {
         this.symbole = symbole;
     }
 
-    public int getTauxId() {
-        return TauxId;
+    public long getTauxId() {
+        return tauxId;
     }
 
-    public void setTauxId(int tauxId) {
-        TauxId = tauxId;
+    public void setTauxId(long tauxId) {
+        this.tauxId = tauxId;
     }
 }

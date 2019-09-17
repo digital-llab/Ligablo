@@ -1,62 +1,59 @@
 package com.llab.ligablo.models.vente;
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.ForeignKey;
+
+
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
+import android.arch.persistence.room.PrimaryKey;
 
 import com.llab.ligablo.models.produits.Contenant;
 
-@Entity(tableName = "PaiementType",foreignKeys ={@ForeignKey(entity =LigneVente.class ,parentColumns ="id",childColumns ="ligneVenteId"),
+
+@Entity(indices = {@Index("ligneVenteId"), @Index("paiementId"), @Index("contenantId")}, foreignKeys ={@ForeignKey(entity =LigneVente.class ,parentColumns ="id",childColumns ="ligneVenteId"),
                       @ForeignKey(entity =Paiement.class ,parentColumns ="id",childColumns ="paiementId"),
-                      @ForeignKey(entity =Contenant.class,parentColumns ="id",childColumns ="contenantId")})
+                      @ForeignKey(entity = Contenant.class,parentColumns ="id",childColumns ="contenantId")})
 public class PaiementType {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    private int id;
-    @ColumnInfo(name="ligneVenteId")
-    private int ligneVenteId;
-    @ColumnInfo(name="paiementId")
-    private int paiementId;
-    @ColumnInfo(name="contenantId")
-    private int contenantId;
+    private long id;
+    private long ligneVenteId;
+    private long paiementId;
+    private long contenantId;
 
-
-    public PaiementType(int id, int ligneVenteId, int paiementId, int contenantId) {
-        this.id = id;
+    public PaiementType(long ligneVenteId, long paiementId, long contenantId) {
         this.ligneVenteId = ligneVenteId;
         this.paiementId = paiementId;
         this.contenantId = contenantId;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getLigneVenteId() {
+    public long getLigneVenteId() {
         return ligneVenteId;
     }
 
-    public void setLigneVenteId(int ligneVenteId) {
+    public void setLigneVenteId(long ligneVenteId) {
         this.ligneVenteId = ligneVenteId;
     }
 
-    public int getPaiementId() {
+    public long getPaiementId() {
         return paiementId;
     }
 
-    public void setPaiementId(int paiementId) {
+    public void setPaiementId(long paiementId) {
         this.paiementId = paiementId;
     }
 
-    public int getContenantId() {
+    public long getContenantId() {
         return contenantId;
     }
 
-    public void setContenantId(int contenantId) {
+    public void setContenantId(long contenantId) {
         this.contenantId = contenantId;
     }
 }

@@ -1,44 +1,38 @@
 package com.llab.ligablo.models.etab;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.ForeignKey;
+
+
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
+import android.arch.persistence.room.PrimaryKey;
 
 import com.llab.ligablo.models.users.User;
 
-@Entity(tableName = "Etablissement",foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"),
-        @ForeignKey(entity = EtsType.class, parentColumns = "id", childColumns = "EtsTypeId")})
+
+@Entity(indices = {@Index("userId"), @Index("etsTypeId")}, foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"),
+                       @ForeignKey(entity = EtsType.class, parentColumns = "id", childColumns = "etsTypeId")})
 public class Etablissement {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    private int id;
-    @ColumnInfo(name="nom")
+    private long id;
     private String nom;
-    @ColumnInfo(name="nationalId")
     private String nationalId;
-    @ColumnInfo(name="userId")
-    private int userId;
-    @ColumnInfo(name="EtsTypeId")
-    private int EtsTypeId;
+    private long userId;
+    private long etsTypeId;
 
-    public Etablissement() {
-    }
-
-    public Etablissement(int id, String nom, String nationalId, int userId,int etsTypeId) {
-        this.id = id;
+    public Etablissement(String nom, String nationalId, long userId, long etsTypeId) {
         this.nom = nom;
         this.nationalId = nationalId;
         this.userId = userId;
-        this.EtsTypeId = etsTypeId;
+        this.etsTypeId = etsTypeId;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -58,19 +52,19 @@ public class Etablissement {
         this.nationalId = nationalId;
     }
 
-    public int getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
-    public int getEtsTypeId() {
-        return EtsTypeId;
+    public long getEtsTypeId() {
+        return etsTypeId;
     }
 
-    public void setEtsTypeId(int etsTypeId) {
-        EtsTypeId = etsTypeId;
+    public void setEtsTypeId(long etsTypeId) {
+        this.etsTypeId = etsTypeId;
     }
 }

@@ -1,4 +1,6 @@
 package com.llab.ligablo.database.dao.etabs;
+
+
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
@@ -21,5 +23,5 @@ public interface EtsTypeDao {
     int updateEtsType(EtsType etsType);
 
     @Query("DELETE FROM EtsType WHERE id=:etsTypeId")
-    int deleteEtsType(int etsTypeId);
+    int deleteEtsType(long etsTypeId);
 }

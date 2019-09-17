@@ -1,45 +1,42 @@
 package com.llab.ligablo.models.users;
 
-import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.llab.ligablo.models.etab.Extension;
 
-@Entity(tableName ="AdminExtension" ,foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"),
+@Entity(indices = {@Index("extensionId")}, foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"),
                        @ForeignKey(entity = Extension.class, parentColumns = "id", childColumns = "extensionId"),})
 public class AdminExtension {
 
-    @ColumnInfo(name = "extensionId")
-    private int extensionId;
+    private long extensionId;
     @PrimaryKey
-    @ColumnInfo(name = "userId")
-    private int userId;
-    @ColumnInfo(name = "dateDebut")
+    private long userId;
     private String dateDebut;
-    @ColumnInfo(name = "dateFin")
     private String dateFin;
 
-    public AdminExtension(int extensionId, int userId, String dateDebut) {
+    public AdminExtension(long extensionId, long userId, String dateDebut, String dateFin) {
         this.extensionId = extensionId;
         this.userId = userId;
         this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
     }
 
-    public int getExtensionId() {
+    public long getExtensionId() {
         return extensionId;
     }
 
-    public void setExtensionId(int extensionId) {
+    public void setExtensionId(long extensionId) {
         this.extensionId = extensionId;
     }
 
-    public int getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 

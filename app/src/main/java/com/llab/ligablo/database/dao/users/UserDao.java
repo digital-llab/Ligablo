@@ -12,10 +12,10 @@ import java.util.List;
 @Dao
 public interface UserDao {
     @Query("SELECT * FROM User WHERE id=:userId")
-    LiveData<User> getUser(int userId);
+    LiveData<User> getUser(long userId);
 
     @Query("SELECT * FROM User WHERE managerId =:managerId ORDER BY id DESC")
-    LiveData<List<User>> getUsersByManager(int managerId);
+    LiveData<List<User>> getUsersByManager(long managerId);
 
     @Insert
     long inserUser(User user);
@@ -24,5 +24,5 @@ public interface UserDao {
     int updateUser(User user);
 
     @Query("DELETE FROM User WHERE id = :userId")
-    int deleteUser(int userId);
+    int deleteUser(long userId);
 }

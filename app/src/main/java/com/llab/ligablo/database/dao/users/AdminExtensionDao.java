@@ -21,5 +21,5 @@ public interface AdminExtensionDao {
     int updateAdminExtension(AdminExtension adminExtension);
 
     @Query("DELETE FROM AdminExtension WHERE userId=:userId AND extensionId=:extensionId")
-    int deleteAdminExtension(int extensionId,int userId);
+    int deleteAdminExtension(long extensionId, long userId);
 }

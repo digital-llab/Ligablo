@@ -1,27 +1,24 @@
 package com.llab.ligablo.models.vente;
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.Entity;
 
-@Entity(tableName = "Moyen")
+
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity
 public class Moyen {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    private int id;
-    @ColumnInfo(name="valeur")
+    private long id;
     private String valeur;
 
-
-    public Moyen(int id, String valeur) {
-        this.id = id;
+    public Moyen(String valeur) {
         this.valeur = valeur;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

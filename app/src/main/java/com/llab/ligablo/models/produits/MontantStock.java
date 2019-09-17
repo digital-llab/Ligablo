@@ -1,55 +1,51 @@
 package com.llab.ligablo.models.produits;
 
-import android.arch.persistence.room.ColumnInfo;
+
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "MontantStock",foreignKeys = {@ForeignKey(entity = Montant.class, parentColumns = "id", childColumns = "montantId"),
+@Entity(indices = {@Index("montantId"), @Index("stockId")}, foreignKeys = {@ForeignKey(entity = Montant.class, parentColumns = "id", childColumns = "montantId"),
                        @ForeignKey(entity = Stock.class, parentColumns = "id", childColumns = "stockId")})
 public class MontantStock {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    private int id;
-    @ColumnInfo(name="montantId")
-    private int montantId;
-    @ColumnInfo(name="stockId")
-    private int stockId;
-    @ColumnInfo(name="valeurAchat")
+    private long id;
+    private long montantId;
+    private long stockId;
     private Double valeurAchat;
-    @ColumnInfo(name="date")
     private String date;
 
-    public MontantStock(int id, int montantId, int stockId, Double valeurAchat, String date) {
-        this.id = id;
+
+    public MontantStock(long montantId, long stockId, Double valeurAchat, String date) {
         this.montantId = montantId;
         this.stockId = stockId;
         this.valeurAchat = valeurAchat;
         this.date = date;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getMontantId() {
+    public long getMontantId() {
         return montantId;
     }
 
-    public void setMontantId(int montantId) {
+    public void setMontantId(long montantId) {
         this.montantId = montantId;
     }
 
-    public int getStockId() {
+    public long getStockId() {
         return stockId;
     }
 
-    public void setStockId(int stockId) {
+    public void setStockId(long stockId) {
         this.stockId = stockId;
     }
 

@@ -17,10 +17,10 @@ public interface ProduitsDao {
     LiveData<List<Produits>> getProduits();
 
     @Query("SELECT * FROM Produits WHERE id=:produitId")
-    LiveData<Produits> getProduitById(int produitId);
+    LiveData<Produits> getProduitById(long produitId);
 
     @Query("SELECT * FROM Produits WHERE produitTypeId=:typeId ORDER BY id DESC")
-    LiveData<List<Produits>> getProduitByType(int typeId);
+    LiveData<List<Produits>> getProduitByType(long typeId);
 
     @Insert
     long insertProduit(Produits produits);
@@ -29,5 +29,5 @@ public interface ProduitsDao {
     int updateProduit(Produits produits);
 
     @Query("DELETE FROM Produits WHERE id=:produitId")
-    int deleteproduit(int produitId);
+    int deleteproduit(long produitId);
 }

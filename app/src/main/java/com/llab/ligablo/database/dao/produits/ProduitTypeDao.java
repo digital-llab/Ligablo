@@ -23,5 +23,5 @@ public interface ProduitTypeDao {
     int updateProduitType(ProduitType produitType);
 
     @Query("DELETE FROM ProduitType WHERE id=:produitTypeId")
-    int deleteProduitType(int produitTypeId);
+    int deleteProduitType(long produitTypeId);
 }

@@ -1,35 +1,31 @@
 package com.llab.ligablo.models.produits;
 
-import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "Produits",foreignKeys = @ForeignKey(entity = ProduitType.class,
+@Entity(indices = {@Index("produitTypeId")}, foreignKeys = @ForeignKey(entity = ProduitType.class,
         parentColumns = "id",
         childColumns = "produitTypeId"))
 public class Produits {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    private int id;
-    @ColumnInfo(name="nom")
+    private long id;
     private String nom;
-    @ColumnInfo(name="produitTypeId")
-    private int produitTypeId;
+    private long produitTypeId;
 
 
-    public Produits(int id, String nom, int produitTypeId) {
-        this.id = id;
+    public Produits(String nom, long produitTypeId) {
         this.nom = nom;
         this.produitTypeId = produitTypeId;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -41,11 +37,11 @@ public class Produits {
         this.nom = nom;
     }
 
-    public int getProduitTypeId() {
+    public long getProduitTypeId() {
         return produitTypeId;
     }
 
-    public void setProduitTypeId(int produitTypeId) {
+    public void setProduitTypeId(long produitTypeId) {
         this.produitTypeId = produitTypeId;
     }
 }

@@ -1,75 +1,73 @@
 package com.llab.ligablo.models.produits;
 
-import android.arch.persistence.room.ColumnInfo;
+
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.llab.ligablo.models.etab.Etablissement;
 
-@Entity(tableName = "MontantContenance",foreignKeys = {@ForeignKey(entity = Produits.class, parentColumns = "id", childColumns = "produitId"),
+
+@Entity(indices = {@Index("produitId"), @Index("montantId"), @Index("contenantId"), @Index("etsId")},
+        foreignKeys = {@ForeignKey(entity = Produits.class, parentColumns = "id", childColumns = "produitId"),
                        @ForeignKey(entity = Montant.class, parentColumns = "id", childColumns = "montantId"),
                        @ForeignKey(entity = Contenant.class, parentColumns = "id", childColumns = "contenantId"),
                        @ForeignKey(entity = Etablissement.class, parentColumns = "id", childColumns = "etsId")})
 public class MontantContenance {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="id")
-    private int id;
-    @ColumnInfo(name="contenantId")
-    private int contenantId;
-    @ColumnInfo(name="produitId")
-    private int produitId;
-    @ColumnInfo(name="etsId")
-    private int etsId;
-    @ColumnInfo(name="montantId")
-    private int montantId;
+    private long id;
+    private long contenantId;
+    private long produitId;
+    private long etsId;
+    private long montantId;
 
-    public MontantContenance(int id, int contenantId, int produitId, int etsId, int montantId) {
-        this.id = id;
+
+    public MontantContenance(long contenantId, long produitId, long etsId, long montantId) {
         this.contenantId = contenantId;
         this.produitId = produitId;
         this.etsId = etsId;
         this.montantId = montantId;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getContenantId() {
+    public long getContenantId() {
         return contenantId;
     }
 
-    public void setContenantId(int contenantId) {
+    public void setContenantId(long contenantId) {
         this.contenantId = contenantId;
     }
 
-    public int getProduitId() {
+    public long getProduitId() {
         return produitId;
     }
 
-    public void setProduitId(int produitId) {
+    public void setProduitId(long produitId) {
         this.produitId = produitId;
     }
 
-    public int getEtsId() {
+    public long getEtsId() {
         return etsId;
     }
 
-    public void setEtsId(int etsId) {
+    public void setEtsId(long etsId) {
         this.etsId = etsId;
     }
 
-    public int getMontantId() {
+    public long getMontantId() {
         return montantId;
     }
 
-    public void setMontantId(int montantId) {
+    public void setMontantId(long montantId) {
         this.montantId = montantId;
     }
 }

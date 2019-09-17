@@ -1,4 +1,6 @@
 package com.llab.ligablo.database.dao.etabs;
+
+
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
@@ -14,8 +16,8 @@ public interface AdresseDao {
     @Query("SELECT * FROM Adresse ORDER BY id DESC")
     LiveData<List<Adresse>> getAdresses();
 
-    @Query("SELECT id FROM Adresse ORDER BY id DESC LIMIT 1")
-    int getLastAdresse();
+    /*@Query("SELECT id FROM Adresse ORDER BY id DESC LIMIT 1")
+    LiveData<Adresse> getLastAdresse();*/
 
     @Insert
     long insertAdresse(Adresse adresse);

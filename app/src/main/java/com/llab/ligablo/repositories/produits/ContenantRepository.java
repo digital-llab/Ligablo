@@ -4,7 +4,7 @@ import android.arch.lifecycle.LiveData;
 
 import com.llab.ligablo.database.dao.produits.ContenantDao;
 import com.llab.ligablo.models.produits.Contenant;
-import com.llab.ligablo.models.users.User;
+
 
 import java.util.List;
 

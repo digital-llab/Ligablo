@@ -2,9 +2,9 @@ package com.llab.ligablo.repositories.produits;
 
 import android.arch.lifecycle.LiveData;
 
-import com.llab.ligablo.database.dao.produits.ContenantDao;
+
 import com.llab.ligablo.database.dao.produits.DimensionDao;
-import com.llab.ligablo.models.produits.Contenant;
+
 import com.llab.ligablo.models.produits.Dimension;
 
 import java.util.List;

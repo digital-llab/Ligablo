@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/fbBackgroundColor"
+    android:gravity="center"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Enregistrez les produits que vous vendez et gerer votre stock"
+        android:padding="5dp"
+        android:textColor="@android:color/darker_gray"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btnProducts"
+        
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"
+
+        android:text="Enregistrer les produits"
+        android:layout_height="35dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btnStock"
+        android:background="#3b5998"
+        android:layout_gravity="center"
+        android:padding="10dp"
+
+
+        android:layout_margin="10dp"
+
+
+        android:text="gerer le stock"
+        android:layout_height="35dp" />
+</LinearLayout>

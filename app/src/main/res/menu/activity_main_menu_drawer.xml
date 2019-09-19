@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/activity_main_drawer_accueil"
+            android:icon="@drawable/welcomeico"
+            android:title="Accueil" />
+    </group>
+
+    <item android:title="Information">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/activity_main_drawer_inventaires"
+                    android:icon="@drawable/inventoryico"
+                    android:title="Inventaires" />
+                <item
+                    android:id="@+id/activity_main_drawer_ventes"
+                    android:icon="@drawable/salesico"
+                    android:title="Ventes" />
+                <item
+                    android:id="@+id/activity_main_drawer_stock"
+                    android:icon="@drawable/stockico"
+                    android:title="Stock" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Paramètres">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/activity_main_drawer_configuration"
+                    android:icon="@drawable/configico"
+                    android:title="Configurations" />
+                <item
+                    android:id="@+id/activity_main_drawer_recouvrement"
+                    android:icon="@drawable/recouvrementico"
+                    android:title="Recouvrement" />
+
+                <item
+                    android:id="@+id/activity_main_drawer_conctact"
+                    android:icon="@drawable/logo1"
+                    android:title="Contact" />
+
+                <item
+                    android:id="@+id/activity_main_drawer_profil"
+                    android:icon="@drawable/profilico"
+                    android:title="Profil" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

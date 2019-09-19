@@ -4,4 +4,6 @@
     <string name="s_enregistrer">S\'enregistrer</string>
     <string name="valider">Valider</string>
     <string name="mot_de_passe_oubli">Mot De Passe Oublié</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

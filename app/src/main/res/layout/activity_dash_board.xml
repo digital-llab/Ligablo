@@ -6,12 +6,8 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".controllers.activities.DashBoard">
+    tools:context=".controllers.activities.DrawerDashBoard">
 
-
-    android:background="#fcfcfc"
-
-    android:id="@+id/ll">
 
 <com.gc.materialdesign.views.ScrollView
     android:layout_width="match_parent"
@@ -34,7 +30,7 @@
             android:clickable="true"
             android:background="@android:color/white"
             android:elevation="@dimen/cardview_default_elevation"
-            android:id="@+id/bankcardId"
+            android:id="@+id/configurationCard"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="5dp">
@@ -47,7 +43,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
 
-                    android:src="@drawable/top_up"
+                    android:src="@drawable/configico"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -76,6 +72,7 @@
             android:background="@android:color/white"
             android:elevation="@dimen/cardview_default_elevation"
             android:layout_width="160dp"
+            android:id="@+id/stockCard"
             android:layout_height="190dp"
             android:layout_margin="5dp">
             <LinearLayout
@@ -87,7 +84,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
 
-                    android:src="@drawable/logo1"
+                    android:src="@drawable/stockico"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -121,6 +118,7 @@
         <com.gc.materialdesign.views.Card
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:id="@+id/ventesCard"
             android:background="@android:color/white"
             android:elevation="@dimen/cardview_default_elevation"
             android:layout_width="160dp"
@@ -135,7 +133,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
 
-                    android:src="@drawable/logo1"
+                    android:src="@drawable/salesico"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -165,6 +163,7 @@
             android:background="@android:color/white"
             android:elevation="@dimen/cardview_default_elevation"
             android:layout_height="190dp"
+            android:id="@+id/inventaireCard"
             android:layout_margin="5dp">
 
             <LinearLayout
@@ -173,13 +172,12 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
 
-                    android:src="@drawable/top_up"
-                    android:padding="10dp"
-                    />
+                    android:src="@drawable/inventoryico"
+                    android:padding="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -209,6 +207,7 @@
     <LinearLayout
         android:clipToPadding="false"
         android:gravity="center"
+        android:id="@+id/recouvrementCard"
         android:orientation="horizontal"
         android:padding="10dp"
         android:layout_width="match_parent"
@@ -232,7 +231,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
 
-                    android:src="@drawable/logo1"
+                    android:src="@drawable/recouvrementico"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"

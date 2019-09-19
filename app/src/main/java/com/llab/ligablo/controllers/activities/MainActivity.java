@@ -3,10 +3,12 @@ package com.llab.ligablo.controllers.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.llab.ligablo.R;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         Button btnConnection= findViewById(R.id.btnConnection);
         btnConnection.setOnClickListener(v -> {
@@ -31,5 +35,8 @@ public class MainActivity extends AppCompatActivity {
             Intent enregistrementActivity = new Intent(this, EnregistrementActivity.class);
             startActivity(enregistrementActivity);
         });
+
+
+
     }
 }

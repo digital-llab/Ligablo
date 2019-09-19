@@ -21,7 +21,7 @@ public class EtablissementDataRepository {
         return etablissementDao.getEtablissements(userId);
     }
 
-    public LiveData<Etablissement> getEtablisement(long userId, long etabId) {
+    public LiveData<Etablissement> getEtablissement(long userId, long etabId) {
         return etablissementDao.getEtablissement(userId, etabId);
     }
 

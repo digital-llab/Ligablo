@@ -9,11 +9,11 @@ import com.llab.ligablo.models.produits.MontantContenance;
 
 import java.util.List;
 
-public class MontantContenanceRepository {
+public class MontantContenanceDataRepository {
 
     private final MontantContenanceDao montantContenanceDao;
 
-    public MontantContenanceRepository(MontantContenanceDao montantContenanceDao) {
+    public MontantContenanceDataRepository(MontantContenanceDao montantContenanceDao) {
         this.montantContenanceDao = montantContenanceDao;
     }
 

@@ -9,11 +9,11 @@ import com.llab.ligablo.models.produits.Dimension;
 
 import java.util.List;
 
-public class DimensionRepository {
+public class DimensionDataRepository {
 
     private final DimensionDao dimensionDao;
 
-    public DimensionRepository(DimensionDao dimensionDao) {
+    public DimensionDataRepository(DimensionDao dimensionDao) {
         this.dimensionDao = dimensionDao;
     }
 

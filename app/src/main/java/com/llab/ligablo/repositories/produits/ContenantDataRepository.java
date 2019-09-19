@@ -8,11 +8,11 @@ import com.llab.ligablo.models.produits.Contenant;
 
 import java.util.List;
 
-public class ContenantRepository {
+public class ContenantDataRepository {
 
     private final ContenantDao contenantDao;
 
-    public ContenantRepository(ContenantDao contenantDao) {
+    public ContenantDataRepository(ContenantDao contenantDao) {
         this.contenantDao = contenantDao;
     }
 

@@ -11,6 +11,11 @@ import com.llab.ligablo.models.produits.Contenant;
 import com.llab.ligablo.models.produits.Dimension;
 import com.llab.ligablo.models.produits.Montant;
 import com.llab.ligablo.models.produits.MontantContenance;
+import com.llab.ligablo.models.produits.MontantStock;
+import com.llab.ligablo.models.produits.MontantType;
+import com.llab.ligablo.models.produits.ProduitType;
+import com.llab.ligablo.models.produits.Produits;
+import com.llab.ligablo.models.produits.Stock;
 import com.llab.ligablo.models.users.User;
 import com.llab.ligablo.repositories.produits.ContenantDataRepository;
 import com.llab.ligablo.repositories.produits.DimensionDataRepository;
@@ -180,5 +185,141 @@ public class ProduitViewModel extends ViewModel {
 
     public void deleteMontant(long montantId) {
         executor.execute(() -> montantSource.deleteMontant(montantId));
+    }
+
+    // -----------------
+    // FOR MONTANTSTOCK
+    // -----------------
+
+    public LiveData<List<MontantStock>> getMontantStocks() {
+        return montantStockDataSource.getMontantStocks();
+    }
+
+    public void createMontantStock(MontantStock montantStock) {
+        executor.execute(() -> montantStockDataSource.createMontantStock(montantStock));
+    }
+
+    public void updateMontantStock(MontantStock montantStock) {
+        executor.execute(() -> montantStockDataSource.updateMontantStock(montantStock));
+    }
+
+    public void deleteMontantStock(long montantStockId) {
+        executor.execute(() -> montantStockDataSource.deleteMontantStock(montantStockId));
+    }
+
+    // ----------------
+    // FOR MONTANTTYPE
+    // ----------------
+
+    public LiveData<List<MontantType>> getMontantType() {
+        return montantTypeDataSource.getMontantType();
+    }
+
+    public void createMontantType(MontantType montantType) {
+        executor.execute(() -> montantTypeDataSource.createMontantType(montantType));
+    }
+
+    public void updateMontantType(MontantType montantType) {
+        executor.execute(() -> montantTypeDataSource.updateMontantType(montantType));
+    }
+
+    public void deleteMontantType(long montantTypeId) {
+        executor.execute(() -> montantTypeDataSource.deleteMontantType(montantTypeId));
+    }
+
+    // -------------
+    // FOR PRODUITS
+    // -------------
+
+    public LiveData<List<Produits>> getProduit() {
+        return produitsDataSource.getProduits();
+    }
+
+    public LiveData<Produits> getProduitById(long produitId) {
+        return produitsDataSource.getProduitById(produitId);
+    }
+
+    public LiveData<List<Produits>> getProduitByType(long typeId) {
+        return produitsDataSource.getProduitByType(typeId);
+    }
+
+    public void createProduit(Produits produits) {
+        executor.execute(() -> produitsDataSource.createProduit(produits));
+    }
+
+    public void updateProduit(Produits produits) {
+        executor.execute(() -> produitsDataSource.updateProduit(produits));
+    }
+
+    public void deleteProduit(long produitId) {
+        executor.execute(() -> produitsDataSource.deleteProduit(produitId));
+    }
+
+    // ----------------
+    // FOR PRODUITTYPE
+    // ----------------
+
+    public LiveData<List<ProduitType>> getProduitType() {
+        return produitTypeDataSource.getProduitType();
+    }
+
+    public void createProduitType(ProduitType produitType) {
+        executor.execute(() -> produitTypeDataSource.createProduitType(produitType));
+    }
+
+    public void updateProduitType(ProduitType produitType) {
+        executor.execute(() -> produitTypeDataSource.updateProduitType(produitType));
+    }
+
+    public void deleteProduitType(long produitTypeId) {
+        executor.execute(() -> produitTypeDataSource.deleteProduitType(produitTypeId));
+    }
+
+    // ---------
+    // FOR STOCK
+    // ---------
+
+    public LiveData<List<Stock>> getStocks() {
+        return stockDataSource.getStocks();
+    }
+
+    public LiveData<List<Stock>> getStockInExtension(long extensionId) {
+        return stockDataSource.getStockInExtension(extensionId);
+    }
+
+    public LiveData<List<Stock>> getStockInExtensionByProduct(long extensionId, long productId) {
+        return stockDataSource.getStockInExtensionByProduct(extensionId, productId);
+    }
+
+    public LiveData<List<Stock>> getStockInExtensionByQuantite(long extensionId, long qteStock) {
+        return stockDataSource.getStockInExtensionByQuantite(extensionId, qteStock);
+    }
+
+    public LiveData<List<Stock>> getStockInExtensionByQuantiteAndProduct(long extensionId,
+                                                                         long qteStock,
+                                                                         long productId) {
+        return stockDataSource.getStockInExtensionByQuantiteAndProduct(extensionId, qteStock, productId);
+    }
+
+    public LiveData<List<Stock>> getStockInExtensionByDate(long extensionId, String date) {
+        return stockDataSource.getStockInExtensionByDate(extensionId, date);
+    }
+
+    public LiveData<List<Stock>> getStockInExtensionBetweenTwoDate(long extensionId,
+                                                                   String startDate,
+                                                                   String endDate) {
+        return stockDataSource.getStockInExtensionBetweenTwoDate(extensionId, startDate, endDate);
+    }
+
+    public void createStock(Stock stock) {
+        executor.execute(() -> stockDataSource.createStock(stock));
+    }
+
+    public void updateStock(Stock stock) {
+        executor.execute(() -> stockDataSource.updateStock(stock));
+    }
+
+    public void deleteStock(long stockId) {
+        executor.execute(() -> stockDataSource.deleteStock(stockId));
     }
 }

@@ -16,7 +16,7 @@ public class ProduitTypeDataRepository {
 
     // --- GET ---
 
-    LiveData<List<ProduitType>> getProduitType() {
+    public LiveData<List<ProduitType>> getProduitType() {
         return produitTypeDao.getProduitTypes();
     }
 

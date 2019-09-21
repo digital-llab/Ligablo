@@ -17,31 +17,31 @@ public class StockDataRepository {
 
     // --- GET ---
 
-    LiveData<List<Stock>> getStocks() {
+    public LiveData<List<Stock>> getStocks() {
         return stockDao.getStocks();
     }
 
-    LiveData<List<Stock>> getStockInExtention(long extensionId) {
+    public LiveData<List<Stock>> getStockInExtension(long extensionId) {
         return stockDao.getStocks_InExtension(extensionId);
     }
 
-    LiveData<List<Stock>> getStockInExtensionByProduct(long extensionId, long productId) {
+    public LiveData<List<Stock>> getStockInExtensionByProduct(long extensionId, long productId) {
         return stockDao.getStocks_InExtension_ByProduct(extensionId, productId);
     }
 
-    LiveData<List<Stock>> getStockInExtensionByQuantite(long extensionId, long qteStock) {
+    public LiveData<List<Stock>> getStockInExtensionByQuantite(long extensionId, long qteStock) {
         return stockDao.getStocks_InExtension_ByQuantite(extensionId, qteStock);
     }
 
-    LiveData<List<Stock>> getStockInExtensionByQuantiteAndProduct(long extensionId, long qteStock, long productId) {
+    public LiveData<List<Stock>> getStockInExtensionByQuantiteAndProduct(long extensionId, long qteStock, long productId) {
         return stockDao.getStocks_InExtension_ByQuantiteAndProduct(extensionId,qteStock, productId);
     }
 
-    LiveData<List<Stock>> getStockInExtensionByDate(long extensionId, String date) {
+    public LiveData<List<Stock>> getStockInExtensionByDate(long extensionId, String date) {
         return stockDao.getStocks_InExtensionByDate(extensionId, date);
     }
 
-    LiveData<List<Stock>> getStockInExtensionBetweenTwoDate(long extensionId, String startDate, String endDate) {
+    public LiveData<List<Stock>> getStockInExtensionBetweenTwoDate(long extensionId, String startDate, String endDate) {
         return stockDao.getStocks_InExtensionBetweenTwoDate(extensionId, startDate, endDate);
     }
 
